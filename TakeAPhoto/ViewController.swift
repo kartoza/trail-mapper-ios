@@ -14,6 +14,9 @@ class ViewController: UIViewController,
                       UIImagePickerControllerDelegate {
 
     @IBOutlet weak var image: UIImageView!
+    
+    @IBOutlet weak var captureImageButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var imageDetails: UILabel!
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -21,6 +24,7 @@ class ViewController: UIViewController,
         imageController.delegate = self
         imageController.sourceType = UIImagePickerControllerSourceType.camera
         imageController.allowsEditing = false
+        disableSaveButton()
         self.present(imageController, animated: true)
         {
             // after it is complete
@@ -43,8 +47,10 @@ class ViewController: UIViewController,
         if let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
             image.image = selectedImage
+            enableSaveButton()
         } else {
             // handle error
+            disableSaveButton()
         }
 
         if let URL = info[UIImagePickerControllerMediaURL] as? URL {
@@ -67,12 +73,23 @@ class ViewController: UIViewController,
     }
     
 
+    func enableSaveButton() {
+        self.saveButton.isEnabled = true
+        self.saveButton.backgroundColor = self.captureImageButton.backgroundColor
+    }
+    
+    func disableSaveButton() {
+        self.saveButton.isEnabled = false
+        self.saveButton.backgroundColor = .gray    }
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        disableSaveButton()
+        
     }
 
     override func didReceiveMemoryWarning() {
