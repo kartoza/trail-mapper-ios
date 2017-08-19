@@ -30,6 +30,8 @@
 	<string>Your image will displayed on the map.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Your image will displayed on the map.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>You location will be collected to georefernce images.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

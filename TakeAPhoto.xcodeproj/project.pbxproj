@@ -14,6 +14,7 @@
 		8000FE1C1F44A1F30030831B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8000FE1A1F44A1F30030831B /* LaunchScreen.storyboard */; };
 		8000FE271F44A1F30030831B /* TakeAPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE261F44A1F30030831B /* TakeAPhotoTests.swift */; };
 		8000FE321F44A1F30030831B /* TakeAPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE311F44A1F30030831B /* TakeAPhotoUITests.swift */; };
+		8063FF681F48C50300D34C68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8063FF671F48C50300D34C68 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8000FE2D1F44A1F30030831B /* TakeAPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeAPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8000FE311F44A1F30030831B /* TakeAPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAPhotoUITests.swift; sourceTree = "<group>"; };
 		8000FE331F44A1F30030831B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8063FF671F48C50300D34C68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8063FF681F48C50300D34C68 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 				8000FE251F44A1F30030831B /* TakeAPhotoTests */,
 				8000FE301F44A1F30030831B /* TakeAPhotoUITests */,
 				8000FE0F1F44A1F20030831B /* Products */,
+				8063FF661F48C50300D34C68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +127,14 @@
 				8000FE331F44A1F30030831B /* Info.plist */,
 			);
 			path = TakeAPhotoUITests;
+			sourceTree = "<group>";
+		};
+		8063FF661F48C50300D34C68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8063FF671F48C50300D34C68 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +526,7 @@
 				8000FE381F44A1F30030831B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8000FE391F44A1F30030831B /* Build configuration list for PBXNativeTarget "TakeAPhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				8000FE3B1F44A1F30030831B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8000FE3C1F44A1F30030831B /* Build configuration list for PBXNativeTarget "TakeAPhotoUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				8000FE3E1F44A1F30030831B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

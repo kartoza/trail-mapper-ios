@@ -11,13 +11,16 @@ import Photos
 
 class ViewController: UIViewController,
                       UINavigationControllerDelegate,
-                      UIImagePickerControllerDelegate {
+                      UIImagePickerControllerDelegate,
+                      CLLocationManagerDelegate {
 
     @IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var captureImageButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var imageDetails: UILabel!
+    
+    let manager = CLLocationManager() // for getting GPS coords
     
     @IBAction func buttonPressed(_ sender: Any) {
         let imageController = UIImagePickerController()
@@ -53,20 +56,15 @@ class ViewController: UIViewController,
             disableSaveButton()
         }
 
-        if let URL = info[UIImagePickerControllerMediaURL] as? URL {
-            let opts = PHFetchOptions()
-            opts.fetchLimit = 1
-            let assets = PHAsset.fetchAssets(withALAssetURLs: [URL], options: opts)
-            let asset = assets[0]
-            if asset == nil {
-                imageDetails.text = "No image captured."
-            }
-            //location: CLLocation = asset.location
-            //coordinate: CLLocationCoordinate2D = location.coordinate
-            //latitude = asset.location.coordinate.latitude
-            //longitude = asset.location.coordinate.longitude()
-            //imageDetails.text =  "Position: \(longitude), \(latitude)"
-        }
+        // I searched long and hard to get the location direct from the image.
+        // You can get it form a photo roll image but not one direclty captured
+        // by using the camera. See https://stackoverflow.com/a/42888731 
+        // In particular read all the comments there carefully as there are a 
+        // lot of red herrings where the question is answered based on useing
+        // the photo roll.  Because of all these issues, I opted to get the 
+        // location direct from the GPS rather than the image rather.
+        
+        
         
         self.dismiss(animated: true, completion: nil)
         
@@ -89,7 +87,11 @@ class ViewController: UIViewController,
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         disableSaveButton()
-        
+        // configuration for things relating to location manager.
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,5 +100,20 @@ class ViewController: UIViewController,
     }
 
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        let location = locations[0]
+        
+        //let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        //let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        //let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        //map.setRegion(region, animated: true)
+        self.imageDetails.text = location.description
+        print(location.altitude)
+        print(location.speed)
+        
+        //self.map.showsUserLocation = true
+    }
+    
 }
 
