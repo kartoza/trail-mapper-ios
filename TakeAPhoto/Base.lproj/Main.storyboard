@@ -6,13 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Capture-->
+        <!--Image Capture-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TakeAPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,16 +23,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pFG-yI-KjD">
-                                <rect key="frame" x="16" y="78" width="288" height="318"/>
+                                <rect key="frame" x="16" y="78" width="288" height="424"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="318" id="Dmy-CH-Ey4"/>
+                                    <constraint firstAttribute="height" constant="424" id="Dmy-CH-Ey4"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-oZ-el3">
-                                <rect key="frame" x="171" y="401" width="133" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBD-oZ-el3">
+                                <rect key="frame" x="116" y="516" width="90" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27863776680000002" green="0.63502234219999998" blue="0.94506102800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Save Image">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -42,27 +41,12 @@
                                     <action selector="savePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cv-OG-Yfl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="no active image ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R36-AL-4D7">
-                                <rect key="frame" x="16" y="480" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mY-X4-gNw">
-                                <rect key="frame" x="16" y="440" width="288" height="30"/>
-                                <state key="normal" title="Image Details"/>
-                                <connections>
-                                    <segue destination="URy-Vt-Nv2" kind="push" id="KKi-0O-ufj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-Ov-ycJ">
-                                <rect key="frame" x="16" y="400" width="147" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Njt-Ov-ycJ">
+                                <rect key="frame" x="16" y="516" width="90" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="ITT-75-InV"/>
-                                </constraints>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Get Image">
+                                <state key="normal" title="Capture">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -70,36 +54,31 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vJk-ze-Wcd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mY-X4-gNw">
+                                <rect key="frame" x="214" y="516" width="90" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.27863776680000002" green="0.63502234219999998" blue="0.94506102800000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Details">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="URy-Vt-Nv2" kind="push" id="KKi-0O-ufj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Njt-Ov-ycJ" firstAttribute="leading" secondItem="7mY-X4-gNw" secondAttribute="leading" id="0IT-mN-8xP"/>
-                            <constraint firstItem="R36-AL-4D7" firstAttribute="top" secondItem="7mY-X4-gNw" secondAttribute="bottom" constant="10" id="3PK-3u-YlQ"/>
-                            <constraint firstItem="KBD-oZ-el3" firstAttribute="trailing" secondItem="7mY-X4-gNw" secondAttribute="trailing" id="4Op-ex-Hst"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="R36-AL-4D7" secondAttribute="leading" id="59f-qH-sos"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R36-AL-4D7" secondAttribute="bottom" constant="67" id="Cb3-HQ-nKV"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Njt-Ov-ycJ" secondAttribute="leading" id="JZS-Mq-U7C"/>
                             <constraint firstAttribute="leadingMargin" secondItem="pFG-yI-KjD" secondAttribute="leading" id="K6G-hd-24l"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pFG-yI-KjD" secondAttribute="trailing" id="Lny-CT-L1O"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Njt-Ov-ycJ" secondAttribute="trailing" constant="141" id="MFc-sj-MMU"/>
-                            <constraint firstItem="KBD-oZ-el3" firstAttribute="top" secondItem="pFG-yI-KjD" secondAttribute="bottom" constant="5" id="PZC-Va-gBn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KBD-oZ-el3" secondAttribute="trailing" id="Uj8-4c-dCF"/>
-                            <constraint firstItem="KBD-oZ-el3" firstAttribute="leading" secondItem="Njt-Ov-ycJ" secondAttribute="trailing" constant="8" symbolic="YES" id="cF6-zF-K4b"/>
-                            <constraint firstItem="Njt-Ov-ycJ" firstAttribute="firstBaseline" secondItem="KBD-oZ-el3" secondAttribute="firstBaseline" id="cFD-8t-ZMm"/>
-                            <constraint firstItem="KBD-oZ-el3" firstAttribute="width" secondItem="Njt-Ov-ycJ" secondAttribute="width" constant="-14" id="egf-uk-7AK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="R36-AL-4D7" secondAttribute="trailing" id="fDQ-Y6-LbU"/>
-                            <constraint firstItem="7mY-X4-gNw" firstAttribute="top" secondItem="Njt-Ov-ycJ" secondAttribute="bottom" constant="8" symbolic="YES" id="haG-IG-zRK"/>
-                            <constraint firstItem="Njt-Ov-ycJ" firstAttribute="baseline" secondItem="KBD-oZ-el3" secondAttribute="firstBaseline" constant="-0.5" id="tVP-H1-EBs"/>
-                            <constraint firstItem="Njt-Ov-ycJ" firstAttribute="baseline" secondItem="KBD-oZ-el3" secondAttribute="baseline" constant="0.5" id="u85-el-cKL"/>
+                            <constraint firstItem="pFG-yI-KjD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="bY0-Gx-3iK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Capture" id="B5c-4E-loP">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="j6W-W6-JBo"/>
+                    <navigationItem key="navigationItem" title="Image Capture" id="ULg-Wa-gvM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="M79-gb-MY0"/>
                     </navigationItem>
                     <connections>
                         <outlet property="captureImageButton" destination="Njt-Ov-ycJ" id="7lj-k8-ItJ"/>
                         <outlet property="image" destination="pFG-yI-KjD" id="OoZ-NH-Vho"/>
-                        <outlet property="imageDetails" destination="R36-AL-4D7" id="diO-5E-z0r"/>
                         <outlet property="saveButton" destination="KBD-oZ-el3" id="Tkr-ww-NhR"/>
                     </connections>
                 </viewController>
@@ -107,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1132.5" y="123.59154929577466"/>
         </scene>
-        <!--Details-->
+        <!--Image Details-->
         <scene sceneID="igA-Xw-GZq">
             <objects>
-                <viewController id="URy-Vt-Nv2" sceneMemberID="viewController">
+                <viewController id="URy-Vt-Nv2" customClass="ImageDetailsViewController" customModule="TakeAPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8mC-39-6BW"/>
                         <viewControllerLayoutGuide type="bottom" id="OwD-T7-b8X"/>
@@ -118,15 +97,32 @@
                     <view key="view" contentMode="scaleToFill" id="7ji-dP-SVU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Image details go here..." lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rui-rc-nYO">
+                                <rect key="frame" x="16" y="72" width="288" height="488"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rui-rc-nYO" firstAttribute="top" secondItem="8mC-39-6BW" secondAttribute="bottom" constant="8" symbolic="YES" id="6pk-Do-oQL"/>
+                            <constraint firstItem="rui-rc-nYO" firstAttribute="trailing" secondItem="7ji-dP-SVU" secondAttribute="trailingMargin" id="9on-Sd-BaT"/>
+                            <constraint firstItem="OwD-T7-b8X" firstAttribute="top" secondItem="rui-rc-nYO" secondAttribute="bottom" constant="8" symbolic="YES" id="mDO-Dc-wSa"/>
+                            <constraint firstItem="rui-rc-nYO" firstAttribute="leading" secondItem="7ji-dP-SVU" secondAttribute="leadingMargin" id="yvj-lg-g2E"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="CFv-DK-FUz">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="nag-eg-Op3"/>
+                    <navigationItem key="navigationItem" title="Image Details" id="p7u-au-9VQ">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="x4B-n9-Ap0"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageDetailsLabel" destination="rui-rc-nYO" id="hzP-cB-65a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bB6-GM-luN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1989" y="124"/>
+            <point key="canvasLocation" x="1987.5" y="123.59154929577466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U9e-b4-Wt7">

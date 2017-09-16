@@ -15,13 +15,12 @@ class ViewController: UIViewController,
                       CLLocationManagerDelegate {
 
     @IBOutlet weak var image: UIImageView!
-    
     @IBOutlet weak var captureImageButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var imageDetails: UILabel!
-    
+    var imageDetails: String!
     let manager = CLLocationManager() // for getting GPS coords
     var currentLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
+    
     
     @IBAction func buttonPressed(_ sender: Any) {
         let imageController = UIImagePickerController()
@@ -65,7 +64,7 @@ class ViewController: UIViewController,
         // the photo roll.  Because of all these issues, I opted to get the 
         // location direct from the GPS rather than the image rather.
         
-        self.imageDetails.text = "\(currentLocation.longitude) : \(currentLocation.latitude)"
+        self.imageDetails = "\(currentLocation.longitude) : \(currentLocation.latitude)"
         
         self.dismiss(animated: true, completion: nil)
         
@@ -121,6 +120,9 @@ class ViewController: UIViewController,
         
         //self.map.showsUserLocation = true
     }
-    
-}
 
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //code
+    }
+}

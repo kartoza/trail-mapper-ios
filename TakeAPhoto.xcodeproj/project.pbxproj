@@ -15,6 +15,7 @@
 		8000FE271F44A1F30030831B /* TakeAPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE261F44A1F30030831B /* TakeAPhotoTests.swift */; };
 		8000FE321F44A1F30030831B /* TakeAPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE311F44A1F30030831B /* TakeAPhotoUITests.swift */; };
 		8063FF681F48C50300D34C68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8063FF671F48C50300D34C68 /* CoreLocation.framework */; };
+		80D2F7171F6D053F007BC531 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D2F7161F6D053F007BC531 /* ImageDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8000FE311F44A1F30030831B /* TakeAPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeAPhotoUITests.swift; sourceTree = "<group>"; };
 		8000FE331F44A1F30030831B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8063FF671F48C50300D34C68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		80D2F7161F6D053F007BC531 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		8000FE101F44A1F20030831B /* TakeAPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				80D2F7161F6D053F007BC531 /* ImageDetailsViewController.swift */,
 				8000FE111F44A1F30030831B /* AppDelegate.swift */,
 				8000FE131F44A1F30030831B /* ViewController.swift */,
 				8000FE151F44A1F30030831B /* Main.storyboard */,
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D2F7171F6D053F007BC531 /* ImageDetailsViewController.swift in Sources */,
 				8000FE141F44A1F30030831B /* ViewController.swift in Sources */,
 				8000FE121F44A1F30030831B /* AppDelegate.swift in Sources */,
 			);
