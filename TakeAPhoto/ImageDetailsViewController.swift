@@ -18,17 +18,19 @@ class ImageDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageDetailsLabel.text = "\(location.longitude) : \(location.latitude)"
+        self.imageDetailsLabel.text = "Longitude: \(location.longitude)\nLatitude: \(location.latitude)"
+        
+        
+        // Logic below for zooming an apple maps control to the point ... we will add this later....
+        
+        //let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        //let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        //let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        //map.setRegion(region, animated: true)
+        //self.map.showsUserLocation = true
         
     }
-    
-    // Need to make sense of this!!!
-    // Need to make sense of this!!! the Red part of the method should
-    // Need to make sense of this!!! reference another controller
-    // Need to make sense of this!!!
-    @IBAction func unwindToRed(unwindSegue: UIStoryboardSegue) {
-        
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
