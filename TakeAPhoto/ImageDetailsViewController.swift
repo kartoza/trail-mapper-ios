@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ImageDetailsViewController: UIViewController {
+    
+    // for storing last coord - passed from previous controller in seque
+    var location: CLLocationCoordinate2D = CLLocationCoordinate2D()
     
     @IBOutlet weak var imageDetailsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imageDetailsLabel.text = "\(location.longitude) : \(location.latitude)"
         
     }
     

@@ -62,7 +62,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="URy-Vt-Nv2" kind="push" id="KKi-0O-ufj"/>
+                                    <segue destination="URy-Vt-Nv2" kind="show" identifier="ImageDetails" id="KKi-0O-ufj"/>
                                 </connections>
                             </button>
                         </subviews>

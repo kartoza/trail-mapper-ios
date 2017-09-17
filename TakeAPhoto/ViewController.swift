@@ -123,6 +123,12 @@ class ViewController: UIViewController,
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //code
+        if (segue.identifier == "ImageDetails") {
+            // first downcast the destination controller to an ImageDetails controller
+            // so that we can access its members
+            let controller = segue.destination as! ImageDetailsViewController
+            controller.location = self.currentLocation
+        }
+        //segue.destination.imageDetailsLabel.text = self.imageDetails
     }
 }
