@@ -1,24 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z1E-77-3G7">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Yof-kb-Q29">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="Z1E-77-3G7" customClass="ViewController" customModule="TrailMapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="obs-iK-foq"/>
+                        <viewControllerLayoutGuide type="bottom" id="IuZ-Pf-d8j"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d3L-iW-Su9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="marloth-portrait" translatesAutoresizingMaskIntoConstraints="NO" id="Aru-EU-WeS">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trail mapper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1w-yS-u8B">
+                                <rect key="frame" x="16" y="20" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GuY-Zb-mNy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQl-g6-sCb">
+                                <rect key="frame" x="16" y="57" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DFz-1i-xNZ"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Create a trail">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ZY-Z0-ady">
+                                <rect key="frame" x="15" y="110" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fky-wa-BXS"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Start recording a trail section">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-BY-jkK">
+                                <rect key="frame" x="15" y="158" width="288" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="79K-lt-AFR"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Add a point of interest to a trail section">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4MN-fM-Zkb">
+                                <rect key="frame" x="16" y="209" width="288" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="Bef-wP-hZH"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Add a point of interest">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ydR-iL-t1Z" firstAttribute="trailing" secondItem="4Xi-BY-jkK" secondAttribute="trailing" constant="17" id="0sE-ys-l8D"/>
+                            <constraint firstItem="9ZY-Z0-ady" firstAttribute="top" secondItem="EQl-g6-sCb" secondAttribute="bottom" constant="23" id="0yO-4l-lNa"/>
+                            <constraint firstItem="EQl-g6-sCb" firstAttribute="top" secondItem="o1w-yS-u8B" secondAttribute="bottom" constant="16" id="22I-Kx-SPS"/>
+                            <constraint firstItem="ydR-iL-t1Z" firstAttribute="trailing" secondItem="EQl-g6-sCb" secondAttribute="trailing" constant="16" id="2Dx-Ah-Uej"/>
+                            <constraint firstItem="Aru-EU-WeS" firstAttribute="top" secondItem="d3L-iW-Su9" secondAttribute="top" id="9HG-9q-ooJ"/>
+                            <constraint firstItem="4Xi-BY-jkK" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" constant="15" id="AZl-zQ-zfZ"/>
+                            <constraint firstItem="4MN-fM-Zkb" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" constant="16" id="CdL-s9-cfl"/>
+                            <constraint firstItem="o1w-yS-u8B" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" constant="16" id="FMd-Rw-fFR"/>
+                            <constraint firstItem="Aru-EU-WeS" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" id="IZK-Pd-YKu"/>
+                            <constraint firstItem="4MN-fM-Zkb" firstAttribute="top" secondItem="4Xi-BY-jkK" secondAttribute="bottom" constant="19" id="Mir-J9-zS4"/>
+                            <constraint firstItem="ydR-iL-t1Z" firstAttribute="trailing" secondItem="o1w-yS-u8B" secondAttribute="trailing" constant="16" id="NI0-Xy-cTn"/>
+                            <constraint firstItem="IuZ-Pf-d8j" firstAttribute="top" secondItem="Aru-EU-WeS" secondAttribute="bottom" id="Qf7-Iu-afO"/>
+                            <constraint firstItem="ydR-iL-t1Z" firstAttribute="trailing" secondItem="9ZY-Z0-ady" secondAttribute="trailing" constant="17" id="SKT-j7-rOw"/>
+                            <constraint firstItem="Aru-EU-WeS" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" id="Tw6-aT-5yy"/>
+                            <constraint firstItem="Aru-EU-WeS" firstAttribute="trailing" secondItem="ydR-iL-t1Z" secondAttribute="trailing" id="XxO-xh-w0f"/>
+                            <constraint firstItem="Aru-EU-WeS" firstAttribute="trailing" secondItem="ydR-iL-t1Z" secondAttribute="trailing" id="aKd-PC-3ly"/>
+                            <constraint firstItem="9ZY-Z0-ady" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" constant="15" id="any-0M-lQU"/>
+                            <constraint firstItem="EQl-g6-sCb" firstAttribute="leading" secondItem="ydR-iL-t1Z" secondAttribute="leading" constant="16" id="cVe-zT-k5P"/>
+                            <constraint firstItem="o1w-yS-u8B" firstAttribute="top" secondItem="ydR-iL-t1Z" secondAttribute="top" id="jc8-Af-42F"/>
+                            <constraint firstItem="ydR-iL-t1Z" firstAttribute="trailing" secondItem="4MN-fM-Zkb" secondAttribute="trailing" constant="16" id="kMm-5I-zVr"/>
+                            <constraint firstItem="4Xi-BY-jkK" firstAttribute="top" secondItem="9ZY-Z0-ady" secondAttribute="bottom" constant="18" id="o2e-tY-NcC"/>
+                            <constraint firstItem="IuZ-Pf-d8j" firstAttribute="top" secondItem="Aru-EU-WeS" secondAttribute="bottom" id="uSU-6w-I1g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ydR-iL-t1Z"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HdK-UO-HlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="941" y="34"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="marloth-portrait" width="1209" height="1512"/>
+    </resources>
 </document>
