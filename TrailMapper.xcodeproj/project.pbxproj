@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8000FE121F44A1F30030831B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE111F44A1F30030831B /* AppDelegate.swift */; };
-		8000FE141F44A1F30030831B /* ImageCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE131F44A1F30030831B /* ImageCaptureController.swift */; };
+		8000FE141F44A1F30030831B /* TMImageCaptureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE131F44A1F30030831B /* TMImageCaptureController.swift */; };
 		8000FE191F44A1F30030831B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8000FE181F44A1F30030831B /* Assets.xcassets */; };
 		8000FE1C1F44A1F30030831B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8000FE1A1F44A1F30030831B /* LaunchScreen.storyboard */; };
 		8000FE271F44A1F30030831B /* TrailMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE261F44A1F30030831B /* TrailMapperTests.swift */; };
 		8000FE321F44A1F30030831B /* TrailMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000FE311F44A1F30030831B /* TrailMapperUITests.swift */; };
 		8063FF681F48C50300D34C68 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8063FF671F48C50300D34C68 /* CoreLocation.framework */; };
-		80D2F7171F6D053F007BC531 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D2F7161F6D053F007BC531 /* ImageDetailsViewController.swift */; };
+		80D2F7171F6D053F007BC531 /* TMImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D2F7161F6D053F007BC531 /* TMImageDetailsViewController.swift */; };
 		80EDEABB1FFD989D00F62EF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8000FE151F44A1F30030831B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		8000FE0E1F44A1F20030831B /* TakeAPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeAPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8000FE111F44A1F30030831B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8000FE131F44A1F30030831B /* ImageCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCaptureController.swift; sourceTree = "<group>"; };
+		8000FE131F44A1F30030831B /* TMImageCaptureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMImageCaptureController.swift; sourceTree = "<group>"; };
 		8000FE161F44A1F30030831B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8000FE181F44A1F30030831B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8000FE1B1F44A1F30030831B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		8000FE311F44A1F30030831B /* TrailMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMapperUITests.swift; sourceTree = "<group>"; };
 		8000FE331F44A1F30030831B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8063FF671F48C50300D34C68 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		80D2F7161F6D053F007BC531 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		80D2F7161F6D053F007BC531 /* TMImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMImageDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +103,11 @@
 		8000FE101F44A1F20030831B /* TrailMapper */ = {
 			isa = PBXGroup;
 			children = (
-				80D2F7161F6D053F007BC531 /* ImageDetailsViewController.swift */,
+				802AD6052003571400A94059 /* NetworkLayer */,
+				802AD604200356D400A94059 /* BusinessLayer */,
+				802AD5FF2003553600A94059 /* ApplicationLayer */,
 				8000FE111F44A1F30030831B /* AppDelegate.swift */,
-				8000FE131F44A1F30030831B /* ImageCaptureController.swift */,
 				8000FE151F44A1F30030831B /* Main.storyboard */,
-				8000FE181F44A1F30030831B /* Assets.xcassets */,
 				8000FE1A1F44A1F30030831B /* LaunchScreen.storyboard */,
 				8000FE1D1F44A1F30030831B /* Info.plist */,
 			);
@@ -130,6 +130,62 @@
 				8000FE331F44A1F30030831B /* Info.plist */,
 			);
 			path = TrailMapperUITests;
+			sourceTree = "<group>";
+		};
+		802AD5FF2003553600A94059 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				802AD6032003568B00A94059 /* Constants */,
+				802AD6022003566A00A94059 /* CustomViews */,
+				802AD601200355A800A94059 /* Resources */,
+				802AD6002003555200A94059 /* ViewControllers */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		802AD6002003555200A94059 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				80D2F7161F6D053F007BC531 /* TMImageDetailsViewController.swift */,
+				8000FE131F44A1F30030831B /* TMImageCaptureController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		802AD601200355A800A94059 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8000FE181F44A1F30030831B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		802AD6022003566A00A94059 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		802AD6032003568B00A94059 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		802AD604200356D400A94059 /* BusinessLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLayer;
+			sourceTree = "<group>";
+		};
+		802AD6052003571400A94059 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		8063FF661F48C50300D34C68 /* Frameworks */ = {
@@ -277,8 +333,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D2F7171F6D053F007BC531 /* ImageDetailsViewController.swift in Sources */,
-				8000FE141F44A1F30030831B /* ImageCaptureController.swift in Sources */,
+				80D2F7171F6D053F007BC531 /* TMImageDetailsViewController.swift in Sources */,
+				8000FE141F44A1F30030831B /* TMImageCaptureController.swift in Sources */,
 				8000FE121F44A1F30030831B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

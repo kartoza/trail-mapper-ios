@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ImageDetailsViewController: UIViewController {
+class TMImageDetailsViewController: UIViewController {
     
     // for storing last coord - passed from previous controller in seque
     var location: CLLocationCoordinate2D = CLLocationCoordinate2D()

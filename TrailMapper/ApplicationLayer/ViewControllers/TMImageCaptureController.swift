@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ImageCaptureController:
+class TMImageCaptureController:
     UIViewController,
     UINavigationControllerDelegate,
     UIImagePickerControllerDelegate,
@@ -92,7 +92,7 @@ class ImageCaptureController:
         // by using the camera. See https://stackoverflow.com/a/42888731
         // In particular read all the comments there carefully as there are a
         // lot of red herrings where the question is answered based on useing
-        // the photo roll.  Because of all these issues, I opted to get the
+        // the photo roll. Because of all these issues, I opted to get the
         // location direct from the GPS rather than the image
         let location = locations[0]
         self.currentLocationCoordinate = location.coordinate
@@ -102,7 +102,7 @@ class ImageCaptureController:
         if (segue.identifier == "ImageDetails") {
             // first downcast the destination controller to an ImageDetails controller
             // so that we can access its members
-            let controller = segue.destination as! ImageDetailsViewController
+            let controller = segue.destination as! TMImageDetailsViewController
             controller.location = self.currentLocationCoordinate
         }
         //segue.destination.imageDetailsLabel.text = self.imageDetails

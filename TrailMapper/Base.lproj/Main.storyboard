@@ -15,7 +15,7 @@
         <!--Image Capture-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ImageCaptureController" customModule="TakeAPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TMImageCaptureController" customModule="TakeAPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -91,7 +91,7 @@
         <!--Image Details-->
         <scene sceneID="igA-Xw-GZq">
             <objects>
-                <viewController id="URy-Vt-Nv2" customClass="ImageDetailsViewController" customModule="TakeAPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="URy-Vt-Nv2" customClass="TMImageDetailsViewController" customModule="TakeAPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8mC-39-6BW"/>
                         <viewControllerLayoutGuide type="bottom" id="OwD-T7-b8X"/>
