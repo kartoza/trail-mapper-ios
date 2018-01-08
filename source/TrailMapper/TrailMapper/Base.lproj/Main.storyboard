@@ -172,12 +172,30 @@
                                     <segue destination="1eA-hy-GgZ" kind="show" id="GIC-gt-3N3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-hT-aGh">
+                                <rect key="frame" x="0.0" y="296" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HdI-68-7Kq"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Add photo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getImage:" destination="NmO-OG-2KQ" eventType="touchUpInside" id="kTv-Ss-O41"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0dX-c9-fo1" firstAttribute="trailing" secondItem="bVW-CA-I4U" secondAttribute="trailing" constant="16" id="2g9-zd-bDE"/>
+                            <constraint firstItem="0dX-c9-fo1" firstAttribute="trailing" secondItem="9vX-hT-aGh" secondAttribute="trailing" id="2tl-4S-Wv5"/>
+                            <constraint firstItem="9vX-hT-aGh" firstAttribute="leading" secondItem="0dX-c9-fo1" secondAttribute="leading" id="5Rs-JS-SbU"/>
                             <constraint firstItem="0dX-c9-fo1" firstAttribute="trailing" secondItem="tjl-fG-3kM" secondAttribute="trailing" id="5zc-fa-wTH"/>
                             <constraint firstItem="tjl-fG-3kM" firstAttribute="leading" secondItem="0dX-c9-fo1" secondAttribute="leading" id="98d-6d-5no"/>
+                            <constraint firstItem="9vX-hT-aGh" firstAttribute="bottom" secondItem="tjl-fG-3kM" secondAttribute="bottom" constant="30" id="Bi0-Pv-g0v"/>
                             <constraint firstItem="bVW-CA-I4U" firstAttribute="leading" secondItem="0dX-c9-fo1" secondAttribute="leading" constant="16" id="J1z-L0-abA"/>
                             <constraint firstItem="0dX-c9-fo1" firstAttribute="trailing" secondItem="Qff-jE-vwu" secondAttribute="trailing" constant="16" id="Rau-Yy-J3g"/>
                             <constraint firstItem="kZo-jE-F2r" firstAttribute="leading" secondItem="0dX-c9-fo1" secondAttribute="leading" constant="16" id="RhC-f7-Lqe"/>
@@ -190,6 +208,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0dX-c9-fo1"/>
                     </view>
+                    <connections>
+                        <outlet property="addImageButton" destination="9vX-hT-aGh" id="1gl-qE-X7X"/>
+                        <outlet property="trailImage" destination="tjl-fG-3kM" id="Rbg-5l-dVO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CW-XK-0Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

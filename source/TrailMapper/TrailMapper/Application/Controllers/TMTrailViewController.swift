@@ -6,21 +6,24 @@
 //  Copyright © 2018 Kartoza Pty Ltd. All rights reserved.
 //
 
+import ALCameraViewController
 import CoreLocation
 import UIKit
 
 class TMTrailViewController:
     UIViewController,
     CLLocationManagerDelegate,
-    UINavigationControllerDelegate {
+UINavigationControllerDelegate {
     
     //MARK:- IBOutlets
     
+    @IBOutlet weak var trailImage: UIImageView!
+    @IBOutlet weak var addImageButton: UIButton!
     
     //MARK:- Variables & Constants
     let locationManager = CLLocationManager() // for getting GPS coords
     var currentLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
-    
+
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -31,7 +34,6 @@ class TMTrailViewController:
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
-        // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,5 +70,23 @@ class TMTrailViewController:
         self.currentLocationCoordinate = location.coordinate
         print("Coordinates: \(self.currentLocationCoordinate.latitude)")
         locationManager.stopUpdatingLocation()
+    }
+
+    // MARK:- Image tap related methods
+
+
+    @IBAction func getImage(_ sender: Any) {
+        print("Get Image Button tapped")
+        let cameraViewController = CameraViewController { [weak self] image, asset in
+            // Do something with your image here.
+            self?.trailImage.image = image
+            self?.dismiss(animated: true, completion: nil)
+            self?.addImageButton.setTitle("Change image ...", for: UIControlState.normal)
+        }
+        
+        present(cameraViewController, animated: true, completion: nil)
+
+        
+        
     }
 }

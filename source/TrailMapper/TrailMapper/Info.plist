@@ -28,6 +28,10 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow TrailMapper to use your camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow TrailMapper to access your photo library</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow TrailMapper to obtain your location</string>
 	<key>UISupportedInterfaceOrientations</key>

@@ -6,8 +6,12 @@ target 'TrailMapper' do
   use_frameworks!
 
   # Pods for TrailMapper
+  # For network access
   pod 'Alamofire', '~> 4.5'
+  # for sqlite
   pod 'FMDB'
+  # For camera
+  pod 'ALCameraViewController'
 
   target 'TrailMapperTests' do
     inherit! :search_paths
