@@ -20,6 +20,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func btnCreateTrailClicked(_ sender:Any) {
+       // TMAPIManager.sharedInstance.getTrails()
+        TMAPIManager.sharedInstance.getTrail(trailId: 1)
+    }
+    
 }
 

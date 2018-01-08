@@ -15,6 +15,7 @@
 		802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802AD61B20035D0200A94059 /* LaunchScreen.storyboard */; };
 		802AD62820035D0200A94059 /* TrailMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD62720035D0200A94059 /* TrailMapperTests.swift */; };
 		802AD63320035D0200A94059 /* TrailMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD63220035D0200A94059 /* TrailMapperUITests.swift */; };
+		80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4890D20038B99008266CC /* TMAPIManager.swift */; };
 		B9DC6A2B9A99E0BB9965D10B /* Pods_TrailMapperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */; };
 		FC3DB36293078F109CA233A8 /* Pods_TrailMapperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		802AD62E20035D0200A94059 /* TrailMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD63220035D0200A94059 /* TrailMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMapperUITests.swift; sourceTree = "<group>"; };
 		802AD63420035D0200A94059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80E4890D20038B99008266CC /* TMAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAPIManager.swift; sourceTree = "<group>"; };
 		95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper.release.xcconfig"; sourceTree = "<group>"; };
 		B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD35A7C232E8EB29823E7D8 /* Pods-TrailMapperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperUITests/Pods-TrailMapperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		802AD64920035DAF00A94059 /* APIWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				80E4890D20038B99008266CC /* TMAPIManager.swift */,
 			);
 			path = APIWrapper;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				802AD61520035D0200A94059 /* ViewController.swift in Sources */,
+				80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */,
 				802AD61320035D0200A94059 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
