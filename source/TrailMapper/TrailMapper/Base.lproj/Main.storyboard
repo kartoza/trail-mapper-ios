@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing Page View Controller-->
         <scene sceneID="Yof-kb-Q29">
             <objects>
-                <viewController id="Z1E-77-3G7" customClass="ViewController" customModule="TrailMapper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Z1E-77-3G7" customClass="TMLandingPageViewController" customModule="TrailMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="obs-iK-foq"/>
                         <viewControllerLayoutGuide type="bottom" id="IuZ-Pf-d8j"/>
@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="928" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--Trail View Controller-->
         <scene sceneID="Rri-hS-FRX">
             <objects>
-                <viewController id="NmO-OG-2KQ" sceneMemberID="viewController">
+                <viewController id="NmO-OG-2KQ" customClass="TMTrailViewController" customModule="TrailMapper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G71-Jb-E8d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		79FD501D4A4A59DE32D4FD1D /* Pods_TrailMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */; };
 		802AD61320035D0200A94059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61220035D0200A94059 /* AppDelegate.swift */; };
-		802AD61520035D0200A94059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61420035D0200A94059 /* ViewController.swift */; };
+		802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61420035D0200A94059 /* TMLandingPageViewController.swift */; };
 		802AD61820035D0200A94059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802AD61620035D0200A94059 /* Main.storyboard */; };
 		802AD61A20035D0200A94059 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 802AD61920035D0200A94059 /* Assets.xcassets */; };
 		802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802AD61B20035D0200A94059 /* LaunchScreen.storyboard */; };
 		802AD62820035D0200A94059 /* TrailMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD62720035D0200A94059 /* TrailMapperTests.swift */; };
 		802AD63320035D0200A94059 /* TrailMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD63220035D0200A94059 /* TrailMapperUITests.swift */; };
+		80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80680BF120039F0800BED446 /* TMTrailViewController.swift */; };
+		80680BF42003A04C00BED446 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80680BF32003A04C00BED446 /* CoreLocation.framework */; };
 		80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4890D20038B99008266CC /* TMAPIManager.swift */; };
 		B9DC6A2B9A99E0BB9965D10B /* Pods_TrailMapperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */; };
 		FC3DB36293078F109CA233A8 /* Pods_TrailMapperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */; };
@@ -43,7 +45,7 @@
 		5F28F30143B7E5708C4F0FA7 /* Pods-TrailMapperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperTests/Pods-TrailMapperTests.release.xcconfig"; sourceTree = "<group>"; };
 		802AD60F20035D0200A94059 /* TrailMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD61220035D0200A94059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		802AD61420035D0200A94059 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		802AD61420035D0200A94059 /* TMLandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMLandingPageViewController.swift; sourceTree = "<group>"; };
 		802AD61720035D0200A94059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		802AD61920035D0200A94059 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		802AD61C20035D0200A94059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +56,8 @@
 		802AD62E20035D0200A94059 /* TrailMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD63220035D0200A94059 /* TrailMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMapperUITests.swift; sourceTree = "<group>"; };
 		802AD63420035D0200A94059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80680BF120039F0800BED446 /* TMTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailViewController.swift; sourceTree = "<group>"; };
+		80680BF32003A04C00BED446 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		80E4890D20038B99008266CC /* TMAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAPIManager.swift; sourceTree = "<group>"; };
 		95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper.release.xcconfig"; sourceTree = "<group>"; };
 		B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80680BF42003A04C00BED446 /* CoreLocation.framework in Frameworks */,
 				79FD501D4A4A59DE32D4FD1D /* Pods_TrailMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +99,7 @@
 		01F6034010942465BA9ACD1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				80680BF32003A04C00BED446 /* CoreLocation.framework */,
 				2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */,
 				1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */,
 				B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */,
@@ -208,7 +214,8 @@
 		802AD64420035D3800A94059 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				802AD61420035D0200A94059 /* ViewController.swift */,
+				802AD61420035D0200A94059 /* TMLandingPageViewController.swift */,
+				80680BF120039F0800BED446 /* TMTrailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -551,8 +558,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				802AD61520035D0200A94059 /* ViewController.swift in Sources */,
+				802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */,
 				80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */,
+				80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */,
 				802AD61320035D0200A94059 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

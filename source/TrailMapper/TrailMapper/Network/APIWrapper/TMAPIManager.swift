@@ -15,7 +15,6 @@ class TMAPIManager: NSObject {
         struct Static {
             static let instance:TMAPIManager = TMAPIManager()
         }
-        
         return Static.instance
     }
     
