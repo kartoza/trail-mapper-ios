@@ -43,7 +43,7 @@ extension UIButton {
         }
     }
     
-    @objc func performAction() {
+    func performAction() {
         guard let action = action else {
             return
         }

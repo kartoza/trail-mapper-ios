@@ -72,7 +72,7 @@ public class PhotoLibraryViewController: UIViewController {
         inViewController.present(navigationController, animated: animated, completion: nil)
     }
     
-    @objc public func dismissLibrary() {
+    public func dismissLibrary() {
         onSelectionComplete?(nil)
     }
     

@@ -25,21 +25,31 @@ public class VolumeControl {
     var onVolumeChange: VolumeChangeAction?
     
     init(view: UIView, onVolumeChange: VolumeChangeAction?) {
-        self.onVolumeChange = onVolumeChange
-        view.addSubview(volumeView)
-        view.sendSubview(toBack: volumeView)
         
-        try? AVAudioSession.sharedInstance().setActive(true)
-        NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged), name: NSNotification.Name(rawValue: changeKey), object: nil)
-    }
+        self.onVolumeChange = onVolumeChange
+        configureInView(view)
+        
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+            NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged), name: NSNotification.Name(rawValue: changeKey), object: nil)
+        } catch {
+        }
+        
 
+    }
+    
     deinit {
-        try? AVAudioSession.sharedInstance().setActive(false)
+        try! AVAudioSession.sharedInstance().setActive(false)
         NotificationCenter.default.removeObserver(self)
         onVolumeChange = nil
         volumeView.removeFromSuperview()
     }
-
+    
+    func configureInView(_ view: UIView) {
+        view.addSubview(volumeView)
+        view.sendSubview(toBack: volumeView)
+    }
+    
     @objc func volumeChanged() {
         guard let slider = volumeView.subviews.filter({ $0 is UISlider }).first as? UISlider else { return }
         let volume = AVAudioSession.sharedInstance().outputVolume

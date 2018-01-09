@@ -7,9 +7,9 @@ target 'TrailMapper' do
 
   # Pods for TrailMapper
   # For network access
-  pod 'Alamofire', '~> 4.5'
+  pod 'Alamofire'
   # for sqlite
-  pod 'FMDB'
+  #pod 'FMDB'
   # For camera
   pod 'ALCameraViewController'
 

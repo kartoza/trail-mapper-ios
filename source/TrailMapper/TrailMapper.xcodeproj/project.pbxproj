@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCA82004916A00D66980 /* AlertManager.swift */; };
+		50DFFCB82004916A00D66980 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DFFCA92004916A00D66980 /* AlertView.xib */; };
+		50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAA2004916A00D66980 /* AlertViewController.swift */; };
+		50DFFCBA2004916A00D66980 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAB2004916A00D66980 /* CRNotification.swift */; };
+		50DFFCBB2004916A00D66980 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAE2004916A00D66980 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBC2004916A00D66980 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB02004916A00D66980 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB22004916A00D66980 /* FMDBUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB42004916A00D66980 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		79FD501D4A4A59DE32D4FD1D /* Pods_TrailMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */; };
 		802AD61320035D0200A94059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61220035D0200A94059 /* AppDelegate.swift */; };
 		802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61420035D0200A94059 /* TMLandingPageViewController.swift */; };
@@ -42,6 +51,20 @@
 /* Begin PBXFileReference section */
 		1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50DFFCA82004916A00D66980 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		50DFFCA92004916A00D66980 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		50DFFCAA2004916A00D66980 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		50DFFCAB2004916A00D66980 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
+		50DFFCAD2004916A00D66980 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		50DFFCAE2004916A00D66980 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		50DFFCAF2004916A00D66980 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		50DFFCB02004916A00D66980 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		50DFFCB12004916A00D66980 /* FMDBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBUtils.h; sourceTree = "<group>"; };
+		50DFFCB22004916A00D66980 /* FMDBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBUtils.m; sourceTree = "<group>"; };
+		50DFFCB32004916A00D66980 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		50DFFCB42004916A00D66980 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		50DFFCB52004916A00D66980 /* SCIDatabaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCIDatabaseDAO.h; sourceTree = "<group>"; };
+		50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCIDatabaseDAO.m; sourceTree = "<group>"; };
 		5F28F30143B7E5708C4F0FA7 /* Pods-TrailMapperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperTests/Pods-TrailMapperTests.release.xcconfig"; sourceTree = "<group>"; };
 		802AD60F20035D0200A94059 /* TrailMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD61220035D0200A94059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +143,43 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		50DFFCA62004916A00D66980 /* ThirdPartiesLibs */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCA72004916A00D66980 /* CustomAlertView */,
+				50DFFCAC2004916A00D66980 /* DataBaseManager */,
+			);
+			path = ThirdPartiesLibs;
+			sourceTree = "<group>";
+		};
+		50DFFCA72004916A00D66980 /* CustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCA82004916A00D66980 /* AlertManager.swift */,
+				50DFFCA92004916A00D66980 /* AlertView.xib */,
+				50DFFCAA2004916A00D66980 /* AlertViewController.swift */,
+				50DFFCAB2004916A00D66980 /* CRNotification.swift */,
+			);
+			path = CustomAlertView;
+			sourceTree = "<group>";
+		};
+		50DFFCAC2004916A00D66980 /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCAD2004916A00D66980 /* FMDatabase.h */,
+				50DFFCAE2004916A00D66980 /* FMDatabase.m */,
+				50DFFCAF2004916A00D66980 /* FMDatabaseAdditions.h */,
+				50DFFCB02004916A00D66980 /* FMDatabaseAdditions.m */,
+				50DFFCB12004916A00D66980 /* FMDBUtils.h */,
+				50DFFCB22004916A00D66980 /* FMDBUtils.m */,
+				50DFFCB32004916A00D66980 /* FMResultSet.h */,
+				50DFFCB42004916A00D66980 /* FMResultSet.m */,
+				50DFFCB52004916A00D66980 /* SCIDatabaseDAO.h */,
+				50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */,
+			);
+			path = DataBaseManager;
+			sourceTree = "<group>";
+		};
 		802AD60620035D0200A94059 = {
 			isa = PBXGroup;
 			children = (
@@ -196,9 +256,9 @@
 		802AD64220035D1D00A94059 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				50DFFCA62004916A00D66980 /* ThirdPartiesLibs */,
 				802AD64820035D9400A94059 /* HelperClasses */,
 				802AD64620035D6E00A94059 /* Models */,
-				802AD64720035D8100A94059 /* ThirdPartyLibraries */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -232,13 +292,6 @@
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		802AD64720035D8100A94059 /* ThirdPartyLibraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdPartyLibraries;
 			sourceTree = "<group>";
 		};
 		802AD64820035D9400A94059 /* HelperClasses */ = {
@@ -380,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */,
+				50DFFCB82004916A00D66980 /* AlertView.xib in Resources */,
 				802AD61A20035D0200A94059 /* Assets.xcassets in Resources */,
 				802AD61820035D0200A94059 /* Main.storyboard in Resources */,
 			);
@@ -474,13 +528,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -560,10 +612,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DFFCBA2004916A00D66980 /* CRNotification.swift in Sources */,
 				802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */,
+				50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */,
 				80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */,
+				50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */,
+				50DFFCBC2004916A00D66980 /* FMDatabaseAdditions.m in Sources */,
 				80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */,
+				50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */,
 				802AD61320035D0200A94059 /* AppDelegate.swift in Sources */,
+				50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */,
+				50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */,
+				50DFFCBB2004916A00D66980 /* FMDatabase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
