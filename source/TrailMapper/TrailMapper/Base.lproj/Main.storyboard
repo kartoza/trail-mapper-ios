@@ -156,6 +156,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="UGR-5G-YMd" kind="show" identifier="TrailMapSeque" id="mNm-p2-hbC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-CA-I4U">
                                 <rect key="frame" x="16" y="516" width="288" height="32"/>
@@ -230,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzc-Oo-oU9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2591" y="34"/>
+            <point key="canvasLocation" x="2854" y="787"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nai-pV-Dd4">
@@ -247,6 +250,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSp-5N-Zsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81" y="34"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NIj-It-IgM">
+            <objects>
+                <viewController id="UGR-5G-YMd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bWx-lX-Zpj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kkW-GE-663">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QuM-ak-q4z" firstAttribute="trailing" secondItem="kkW-GE-663" secondAttribute="trailing" id="5V4-TF-NfW"/>
+                            <constraint firstItem="QuM-ak-q4z" firstAttribute="bottom" secondItem="kkW-GE-663" secondAttribute="bottom" id="9Ts-Wx-VOU"/>
+                            <constraint firstItem="kkW-GE-663" firstAttribute="top" secondItem="QuM-ak-q4z" secondAttribute="top" id="FjR-xL-7cc"/>
+                            <constraint firstItem="kkW-GE-663" firstAttribute="leading" secondItem="QuM-ak-q4z" secondAttribute="leading" id="sZF-nR-yMr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QuM-ak-q4z"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIK-ya-GO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2854" y="-140"/>
         </scene>
     </scenes>
     <resources>

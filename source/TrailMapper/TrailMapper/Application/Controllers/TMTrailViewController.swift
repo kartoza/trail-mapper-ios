@@ -51,6 +51,12 @@ UINavigationControllerDelegate {
      // Pass the selected object to the new view controller.
      }
      */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "TrailMapSeque") {
+            let controller = segue.destination as! TMTrailLocationViewController
+            controller.currentLocationCoordinate = currentLocationCoordinate
+        }
+    }
     
     // MARK: - Custom Class Functions
     
