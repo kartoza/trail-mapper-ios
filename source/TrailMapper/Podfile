@@ -7,11 +7,17 @@ target 'TrailMapper' do
 
   # Pods for TrailMapper
   # For network access
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.5'
   # for sqlite
   #pod 'FMDB'
   # For camera
-  pod 'ALCameraViewController'
+  pod 'ALCameraViewController','~> 3.0.2'
+
+    #For Creating models from JSON
+    pod 'SwiftyJSON'
+
+    #For key board related functions
+    pod 'IQKeyboardManagerSwift'
 
   target 'TrailMapperTests' do
     inherit! :search_paths

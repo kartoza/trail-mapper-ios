@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503F1A742004AE780011183E /* TMTrailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A732004AE780011183E /* TMTrailModel.swift */; };
+		503F1A782004B2D70011183E /* TMTrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A772004B2D70011183E /* TMTrail.swift */; };
+		503F1A7B2004C8260011183E /* TMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7A2004C8260011183E /* TMUtility.swift */; };
+		503F1A7D2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7C2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift */; };
+		503F1A7F200501660011183E /* TMAllTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7E200501660011183E /* TMAllTrailsViewController.swift */; };
 		50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCA82004916A00D66980 /* AlertManager.swift */; };
 		50DFFCB82004916A00D66980 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DFFCA92004916A00D66980 /* AlertView.xib */; };
 		50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAA2004916A00D66980 /* AlertViewController.swift */; };
@@ -16,6 +21,10 @@
 		50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB22004916A00D66980 /* FMDBUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB42004916A00D66980 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCC1200496D000D66980 /* TrailMapper.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 50DFFCC0200496D000D66980 /* TrailMapper.sqlite */; };
+		50DFFCC4200498AE00D66980 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCC3200498AD00D66980 /* Reachability.swift */; };
+		50DFFCC720049BBE00D66980 /* TMDataWrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCC620049BBE00D66980 /* TMDataWrapperManager.swift */; };
+		50DFFCCC20049CB300D66980 /* TMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCCB20049CB300D66980 /* TMConstants.swift */; };
 		79FD501D4A4A59DE32D4FD1D /* Pods_TrailMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */; };
 		802AD61320035D0200A94059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61220035D0200A94059 /* AppDelegate.swift */; };
 		802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61420035D0200A94059 /* TMLandingPageViewController.swift */; };
@@ -51,6 +60,12 @@
 /* Begin PBXFileReference section */
 		1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		503F1A722004A91B0011183E /* TrailMapper_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailMapper_Bridging_Header.h; sourceTree = "<group>"; };
+		503F1A732004AE780011183E /* TMTrailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailModel.swift; sourceTree = "<group>"; };
+		503F1A772004B2D70011183E /* TMTrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTrail.swift; sourceTree = "<group>"; };
+		503F1A7A2004C8260011183E /* TMUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUtility.swift; sourceTree = "<group>"; };
+		503F1A7C2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailMapLocationVControllerViewController.swift; sourceTree = "<group>"; };
+		503F1A7E200501660011183E /* TMAllTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAllTrailsViewController.swift; sourceTree = "<group>"; };
 		50DFFCA82004916A00D66980 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		50DFFCA92004916A00D66980 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		50DFFCAA2004916A00D66980 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +80,10 @@
 		50DFFCB42004916A00D66980 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		50DFFCB52004916A00D66980 /* SCIDatabaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCIDatabaseDAO.h; sourceTree = "<group>"; };
 		50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCIDatabaseDAO.m; sourceTree = "<group>"; };
+		50DFFCC0200496D000D66980 /* TrailMapper.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = TrailMapper.sqlite; sourceTree = "<group>"; };
+		50DFFCC3200498AD00D66980 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		50DFFCC620049BBE00D66980 /* TMDataWrapperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDataWrapperManager.swift; sourceTree = "<group>"; };
+		50DFFCCB20049CB300D66980 /* TMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMConstants.swift; sourceTree = "<group>"; };
 		5F28F30143B7E5708C4F0FA7 /* Pods-TrailMapperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperTests/Pods-TrailMapperTests.release.xcconfig"; sourceTree = "<group>"; };
 		802AD60F20035D0200A94059 /* TrailMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD61220035D0200A94059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +162,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		503F1A792004C7FD0011183E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				503F1A7A2004C8260011183E /* TMUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		50DFFCA62004916A00D66980 /* ThirdPartiesLibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,9 +207,34 @@
 			path = DataBaseManager;
 			sourceTree = "<group>";
 		};
+		50DFFCC2200498AD00D66980 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCC3200498AD00D66980 /* Reachability.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		50DFFCC520049BBE00D66980 /* DatabaseWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCC620049BBE00D66980 /* TMDataWrapperManager.swift */,
+			);
+			path = DatabaseWrapper;
+			sourceTree = "<group>";
+		};
+		50DFFCCA20049C9D00D66980 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCCB20049CB300D66980 /* TMConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		802AD60620035D0200A94059 = {
 			isa = PBXGroup;
 			children = (
+				503F1A722004A91B0011183E /* TrailMapper_Bridging_Header.h */,
 				802AD61120035D0200A94059 /* TrailMapper */,
 				802AD62620035D0200A94059 /* TrailMapperTests */,
 				802AD63120035D0200A94059 /* TrailMapperUITests */,
@@ -237,7 +289,7 @@
 		802AD64020035D0F00A94059 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				802AD64A20035DC000A94059 /* DatabaseWrapper */,
+				50DFFCC520049BBE00D66980 /* DatabaseWrapper */,
 				802AD64920035DAF00A94059 /* APIWrapper */,
 			);
 			path = Network;
@@ -246,6 +298,7 @@
 		802AD64120035D1600A94059 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				50DFFCCA20049C9D00D66980 /* Constants */,
 				802AD64420035D3800A94059 /* Controllers */,
 				802AD64320035D3100A94059 /* Resources */,
 				802AD64520035D4000A94059 /* Views */,
@@ -256,8 +309,9 @@
 		802AD64220035D1D00A94059 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				503F1A792004C7FD0011183E /* Utilities */,
+				50DFFCC2200498AD00D66980 /* HelperClasses */,
 				50DFFCA62004916A00D66980 /* ThirdPartiesLibs */,
-				802AD64820035D9400A94059 /* HelperClasses */,
 				802AD64620035D6E00A94059 /* Models */,
 			);
 			path = Business;
@@ -266,6 +320,7 @@
 		802AD64320035D3100A94059 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50DFFCC0200496D000D66980 /* TrailMapper.sqlite */,
 				802AD61920035D0200A94059 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -276,6 +331,8 @@
 			children = (
 				802AD61420035D0200A94059 /* TMLandingPageViewController.swift */,
 				80680BF120039F0800BED446 /* TMTrailViewController.swift */,
+				503F1A7C2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift */,
+				503F1A7E200501660011183E /* TMAllTrailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -290,15 +347,10 @@
 		802AD64620035D6E00A94059 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				503F1A772004B2D70011183E /* TMTrail.swift */,
+				503F1A732004AE780011183E /* TMTrailModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		802AD64820035D9400A94059 /* HelperClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 		802AD64920035DAF00A94059 /* APIWrapper */ = {
@@ -307,13 +359,6 @@
 				80E4890D20038B99008266CC /* TMAPIManager.swift */,
 			);
 			path = APIWrapper;
-			sourceTree = "<group>";
-		};
-		802AD64A20035DC000A94059 /* DatabaseWrapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DatabaseWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +480,7 @@
 				802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */,
 				50DFFCB82004916A00D66980 /* AlertView.xib in Resources */,
 				802AD61A20035D0200A94059 /* Assets.xcassets in Resources */,
+				50DFFCC1200496D000D66980 /* TrailMapper.sqlite in Resources */,
 				802AD61820035D0200A94059 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,11 +574,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -616,14 +666,22 @@
 				802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */,
 				50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */,
 				80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */,
+				503F1A782004B2D70011183E /* TMTrail.swift in Sources */,
 				50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */,
+				50DFFCCC20049CB300D66980 /* TMConstants.swift in Sources */,
 				50DFFCBC2004916A00D66980 /* FMDatabaseAdditions.m in Sources */,
 				80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */,
 				50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */,
+				503F1A7F200501660011183E /* TMAllTrailsViewController.swift in Sources */,
 				802AD61320035D0200A94059 /* AppDelegate.swift in Sources */,
 				50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */,
+				503F1A742004AE780011183E /* TMTrailModel.swift in Sources */,
+				503F1A7B2004C8260011183E /* TMUtility.swift in Sources */,
+				50DFFCC720049BBE00D66980 /* TMDataWrapperManager.swift in Sources */,
+				503F1A7D2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift in Sources */,
 				50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */,
 				50DFFCBB2004916A00D66980 /* FMDatabase.m in Sources */,
+				50DFFCC4200498AE00D66980 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +854,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kartoza.TrailMapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TrailMapper_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -812,6 +871,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kartoza.TrailMapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = TrailMapper_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

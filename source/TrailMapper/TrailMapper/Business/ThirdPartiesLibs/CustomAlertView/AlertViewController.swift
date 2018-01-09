@@ -58,7 +58,7 @@ class AlertViewController: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.frame = CGRect(x: 0, y: 0, width: Constants.SCREEN_SIZE.width, height: Constants.SCREEN_SIZE.height)
+        self.frame = CGRect(x: 0, y: 0, width: TMConstants.SCREEN_SIZE.width, height: TMConstants.SCREEN_SIZE.height)
     }
     
     override func draw(_ rect: CGRect) {

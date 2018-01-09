@@ -10,20 +10,20 @@ import ALCameraViewController
 import CoreLocation
 import UIKit
 
-class TMTrailViewController:
-    UIViewController,
-    CLLocationManagerDelegate,
-UINavigationControllerDelegate {
+class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextFieldDelegate {
     
     //MARK:- IBOutlets
     
     @IBOutlet weak var trailImage: UIImageView!
     @IBOutlet weak var addImageButton: UIButton!
+    @IBOutlet weak var txtFieldTrailName: UITextField!
+    @IBOutlet weak var btnSelectLocation: UIButton!
+    @IBOutlet weak var btnAddNotes: UIButton!
     
     //MARK:- Variables & Constants
     let locationManager = CLLocationManager() // for getting GPS coords
     var currentLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
-
+    var trailImageLocalPath = "No Image available"
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -33,7 +33,12 @@ UINavigationControllerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
+
+        // Add save trail button in navigation bar
+        let saveTrailButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(self.btnSaveTrailTapped))
+        self.navigationItem.rightBarButtonItem = saveTrailButton
+
+        self.getAllTrails()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,9 +56,7 @@ UINavigationControllerDelegate {
      // Pass the selected object to the new view controller.
      }
      */
-    
-    // MARK: - Custom Class Functions
-    
+
     // MARK:- Core Location Methods
     func locationManager(
         _ manager: CLLocationManager,
@@ -73,8 +76,6 @@ UINavigationControllerDelegate {
     }
 
     // MARK:- Image tap related methods
-
-
     @IBAction func getImage(_ sender: Any) {
         print("Get Image Button tapped")
         let cameraViewController = CameraViewController { [weak self] image, asset in
@@ -82,11 +83,60 @@ UINavigationControllerDelegate {
             self?.trailImage.image = image
             self?.dismiss(animated: true, completion: nil)
             self?.addImageButton.setTitle("Change image ...", for: UIControlState.normal)
+            self?.trailImageLocalPath = TMUtility.sharedInstance.saveImage(imagetoConvert: image!, name: "trail_2.png")
         }
         
         present(cameraViewController, animated: true, completion: nil)
 
-        
-        
     }
+
+    // Save btn event
+    @objc func btnSaveTrailTapped() {
+        // Code to save all trail info into Local database
+        if self.validateTrailInputs() {
+
+            //Create trail model from inputs
+            let newTrailModel = TMTrail.init(object: [])
+
+            newTrailModel.name = self.txtFieldTrailName.text
+            newTrailModel.notes = "notes txt"
+            newTrailModel.image = self.trailImageLocalPath
+            newTrailModel.id = 2
+
+            TMDataWrapperManager.sharedInstance.saveTrailToLocalDatabase(trailModel:newTrailModel )
+        }
+    }
+
+
+     // MARK: - Custom Class Functions
+
+    // Validate the input parameters for saving trail
+    func validateTrailInputs()-> Bool {
+        if (self.txtFieldTrailName.text?.isEmpty)! {
+            AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: "Please enter valid trail name", PositiveTitle: TMConstants.kAlertTypeOK)
+            return false
+        }
+
+        return true
+    }
+
+    // To get all the trails which is available in local storage
+    func getAllTrails() {
+        let dataManagerWrapper = TMDataWrapperManager()
+
+            dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
+                if (responseArray?.count)! > 0 {
+                    print("Trail Array --->", responseArray ?? "")
+
+                }
+            }
+        dataManagerWrapper.callToGetTrailsFromDB(trailId: "")
+    }
+
+    //MARK: - UITextField delgate methods
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
 }

@@ -18,6 +18,8 @@ class TMLandingPageViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         // for the landing page only we will hide the navigation controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
+
+        self.getAllTrails()
     }
     
     
@@ -34,6 +36,26 @@ class TMLandingPageViewController: UIViewController {
        // TMAPIManager.sharedInstance.getTrails()
         TMAPIManager.sharedInstance.getTrail(trailId: 1)
     }
-    
+
+
+    // Get All trails list for checking purpose
+    func getAllTrails() {
+        let dataManagerWrapper = TMDataWrapperManager()
+
+        dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
+            if (responseArray?.count)! > 0 {
+                print("Trail Array --->", responseArray ?? "")
+
+                for trailModel in responseArray! {
+                    let trail = trailModel as! TMTrail
+                    if (trail.guid == nil)  {
+                        print(" Trails : \(String(describing: trail.name!)) needs to sync with server")
+                    }
+                }
+            }
+        }
+        dataManagerWrapper.callToGetTrailsFromDB(trailId: "")
+    }
+
 }
 

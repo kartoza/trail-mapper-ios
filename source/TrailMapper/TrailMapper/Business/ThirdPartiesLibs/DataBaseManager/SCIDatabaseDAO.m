@@ -126,7 +126,9 @@ static SCIDatabaseDAO *userProfileDAO;
 
 - (BOOL) executeInsertQuery:(NSString*)query{
     BOOL success = NO;
-    
+
+    NSLog(@"Insert Query %@", query);
+
     @try {
         [objFMDatabase executeUpdate:query];
         success = YES;
