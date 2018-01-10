@@ -7,6 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		503F1A7B2004C8260011183E /* TMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7A2004C8260011183E /* TMUtility.swift */; };
+		503F1A7D2004F9690011183E /* TMTrailMapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7C2004F9690011183E /* TMTrailMapLocationViewController.swift */; };
+		503F1A7F200501660011183E /* TMAllTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7E200501660011183E /* TMAllTrailsViewController.swift */; };
+		507554892005E3CF00B9A2E6 /* TMTrailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507554872005E3CF00B9A2E6 /* TMTrailsModel.swift */; };
+		5075548A2005E3CF00B9A2E6 /* TMTrails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507554882005E3CF00B9A2E6 /* TMTrails.swift */; };
+		5075548C2005F3A200B9A2E6 /* TMWebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075548B2005F3A200B9A2E6 /* TMWebServiceWrapper.swift */; };
+		50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCA82004916A00D66980 /* AlertManager.swift */; };
+		50DFFCB82004916A00D66980 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DFFCA92004916A00D66980 /* AlertView.xib */; };
+		50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAA2004916A00D66980 /* AlertViewController.swift */; };
+		50DFFCBA2004916A00D66980 /* CRNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAB2004916A00D66980 /* CRNotification.swift */; };
+		50DFFCBB2004916A00D66980 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAE2004916A00D66980 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBC2004916A00D66980 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB02004916A00D66980 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB22004916A00D66980 /* FMDBUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB42004916A00D66980 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		50DFFCC1200496D000D66980 /* TrailMapper.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 50DFFCC0200496D000D66980 /* TrailMapper.sqlite */; };
+		50DFFCC4200498AE00D66980 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCC3200498AD00D66980 /* Reachability.swift */; };
+		50DFFCC720049BBE00D66980 /* TMDataWrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCC620049BBE00D66980 /* TMDataWrapperManager.swift */; };
+		50DFFCCC20049CB300D66980 /* TMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCCB20049CB300D66980 /* TMConstants.swift */; };
 		79FD501D4A4A59DE32D4FD1D /* Pods_TrailMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */; };
 		802AD61320035D0200A94059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61220035D0200A94059 /* AppDelegate.swift */; };
 		802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD61420035D0200A94059 /* TMLandingPageViewController.swift */; };
@@ -15,9 +34,13 @@
 		802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802AD61B20035D0200A94059 /* LaunchScreen.storyboard */; };
 		802AD62820035D0200A94059 /* TrailMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD62720035D0200A94059 /* TrailMapperTests.swift */; };
 		802AD63320035D0200A94059 /* TrailMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD63220035D0200A94059 /* TrailMapperUITests.swift */; };
+		805D7D2220060CBF00D39D50 /* trail_section72.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D1D20060CBE00D39D50 /* trail_section72.json */; };
+		805D7D2320060CBF00D39D50 /* trail62.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D1E20060CBE00D39D50 /* trail62.json */; };
+		805D7D2420060CBF00D39D50 /* trail62_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D1F20060CBF00D39D50 /* trail62_sections.json */; };
+		805D7D2520060CBF00D39D50 /* trail_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D2020060CBF00D39D50 /* trail_sections.json */; };
+		805D7D2620060CBF00D39D50 /* trails.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D2120060CBF00D39D50 /* trails.json */; };
 		80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80680BF120039F0800BED446 /* TMTrailViewController.swift */; };
 		80680BF42003A04C00BED446 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80680BF32003A04C00BED446 /* CoreLocation.framework */; };
-		80680BF62004271F00BED446 /* TMTrailLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80680BF52004271F00BED446 /* TMTrailLocationViewController.swift */; };
 		80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4890D20038B99008266CC /* TMAPIManager.swift */; };
 		B9DC6A2B9A99E0BB9965D10B /* Pods_TrailMapperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */; };
 		FC3DB36293078F109CA233A8 /* Pods_TrailMapperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */; };
@@ -43,6 +66,31 @@
 /* Begin PBXFileReference section */
 		1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		503F1A722004A91B0011183E /* TrailMapper_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailMapper_Bridging_Header.h; sourceTree = "<group>"; };
+		503F1A7A2004C8260011183E /* TMUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUtility.swift; sourceTree = "<group>"; };
+		503F1A7C2004F9690011183E /* TMTrailMapLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailMapLocationViewController.swift; sourceTree = "<group>"; };
+		503F1A7E200501660011183E /* TMAllTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAllTrailsViewController.swift; sourceTree = "<group>"; };
+		507554872005E3CF00B9A2E6 /* TMTrailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTrailsModel.swift; sourceTree = "<group>"; };
+		507554882005E3CF00B9A2E6 /* TMTrails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTrails.swift; sourceTree = "<group>"; };
+		5075548B2005F3A200B9A2E6 /* TMWebServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMWebServiceWrapper.swift; sourceTree = "<group>"; };
+		50DFFCA82004916A00D66980 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		50DFFCA92004916A00D66980 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
+		50DFFCAA2004916A00D66980 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		50DFFCAB2004916A00D66980 /* CRNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRNotification.swift; sourceTree = "<group>"; };
+		50DFFCAD2004916A00D66980 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		50DFFCAE2004916A00D66980 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		50DFFCAF2004916A00D66980 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		50DFFCB02004916A00D66980 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		50DFFCB12004916A00D66980 /* FMDBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBUtils.h; sourceTree = "<group>"; };
+		50DFFCB22004916A00D66980 /* FMDBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBUtils.m; sourceTree = "<group>"; };
+		50DFFCB32004916A00D66980 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		50DFFCB42004916A00D66980 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		50DFFCB52004916A00D66980 /* SCIDatabaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCIDatabaseDAO.h; sourceTree = "<group>"; };
+		50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCIDatabaseDAO.m; sourceTree = "<group>"; };
+		50DFFCC0200496D000D66980 /* TrailMapper.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = TrailMapper.sqlite; sourceTree = "<group>"; };
+		50DFFCC3200498AD00D66980 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		50DFFCC620049BBE00D66980 /* TMDataWrapperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMDataWrapperManager.swift; sourceTree = "<group>"; };
+		50DFFCCB20049CB300D66980 /* TMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMConstants.swift; sourceTree = "<group>"; };
 		5F28F30143B7E5708C4F0FA7 /* Pods-TrailMapperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperTests/Pods-TrailMapperTests.release.xcconfig"; sourceTree = "<group>"; };
 		802AD60F20035D0200A94059 /* TrailMapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrailMapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD61220035D0200A94059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +105,13 @@
 		802AD62E20035D0200A94059 /* TrailMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD63220035D0200A94059 /* TrailMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMapperUITests.swift; sourceTree = "<group>"; };
 		802AD63420035D0200A94059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805D7D1D20060CBE00D39D50 /* trail_section72.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail_section72.json; sourceTree = "<group>"; };
+		805D7D1E20060CBE00D39D50 /* trail62.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail62.json; sourceTree = "<group>"; };
+		805D7D1F20060CBF00D39D50 /* trail62_sections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail62_sections.json; sourceTree = "<group>"; };
+		805D7D2020060CBF00D39D50 /* trail_sections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail_sections.json; sourceTree = "<group>"; };
+		805D7D2120060CBF00D39D50 /* trails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trails.json; sourceTree = "<group>"; };
 		80680BF120039F0800BED446 /* TMTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailViewController.swift; sourceTree = "<group>"; };
 		80680BF32003A04C00BED446 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		80680BF52004271F00BED446 /* TMTrailLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailLocationViewController.swift; sourceTree = "<group>"; };
 		80E4890D20038B99008266CC /* TMAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAPIManager.swift; sourceTree = "<group>"; };
 		95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper.release.xcconfig"; sourceTree = "<group>"; };
 		B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,9 +174,79 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		503F1A792004C7FD0011183E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				503F1A7A2004C8260011183E /* TMUtility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		50DFFCA62004916A00D66980 /* ThirdPartiesLibs */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCA72004916A00D66980 /* CustomAlertView */,
+				50DFFCAC2004916A00D66980 /* DataBaseManager */,
+			);
+			path = ThirdPartiesLibs;
+			sourceTree = "<group>";
+		};
+		50DFFCA72004916A00D66980 /* CustomAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCA82004916A00D66980 /* AlertManager.swift */,
+				50DFFCA92004916A00D66980 /* AlertView.xib */,
+				50DFFCAA2004916A00D66980 /* AlertViewController.swift */,
+				50DFFCAB2004916A00D66980 /* CRNotification.swift */,
+			);
+			path = CustomAlertView;
+			sourceTree = "<group>";
+		};
+		50DFFCAC2004916A00D66980 /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCAD2004916A00D66980 /* FMDatabase.h */,
+				50DFFCAE2004916A00D66980 /* FMDatabase.m */,
+				50DFFCAF2004916A00D66980 /* FMDatabaseAdditions.h */,
+				50DFFCB02004916A00D66980 /* FMDatabaseAdditions.m */,
+				50DFFCB12004916A00D66980 /* FMDBUtils.h */,
+				50DFFCB22004916A00D66980 /* FMDBUtils.m */,
+				50DFFCB32004916A00D66980 /* FMResultSet.h */,
+				50DFFCB42004916A00D66980 /* FMResultSet.m */,
+				50DFFCB52004916A00D66980 /* SCIDatabaseDAO.h */,
+				50DFFCB62004916A00D66980 /* SCIDatabaseDAO.m */,
+			);
+			path = DataBaseManager;
+			sourceTree = "<group>";
+		};
+		50DFFCC2200498AD00D66980 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCC3200498AD00D66980 /* Reachability.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		50DFFCC520049BBE00D66980 /* DatabaseWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCC620049BBE00D66980 /* TMDataWrapperManager.swift */,
+			);
+			path = DatabaseWrapper;
+			sourceTree = "<group>";
+		};
+		50DFFCCA20049C9D00D66980 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				50DFFCCB20049CB300D66980 /* TMConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		802AD60620035D0200A94059 = {
 			isa = PBXGroup;
 			children = (
+				503F1A722004A91B0011183E /* TrailMapper_Bridging_Header.h */,
 				802AD61120035D0200A94059 /* TrailMapper */,
 				802AD62620035D0200A94059 /* TrailMapperTests */,
 				802AD63120035D0200A94059 /* TrailMapperUITests */,
@@ -180,7 +302,7 @@
 		802AD64020035D0F00A94059 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				802AD64A20035DC000A94059 /* DatabaseWrapper */,
+				50DFFCC520049BBE00D66980 /* DatabaseWrapper */,
 				802AD64920035DAF00A94059 /* APIWrapper */,
 			);
 			path = Network;
@@ -189,6 +311,7 @@
 		802AD64120035D1600A94059 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				50DFFCCA20049C9D00D66980 /* Constants */,
 				802AD64420035D3800A94059 /* Controllers */,
 				802AD64320035D3100A94059 /* Resources */,
 				802AD64520035D4000A94059 /* Views */,
@@ -199,9 +322,10 @@
 		802AD64220035D1D00A94059 /* Business */ = {
 			isa = PBXGroup;
 			children = (
-				802AD64820035D9400A94059 /* HelperClasses */,
+				503F1A792004C7FD0011183E /* Utilities */,
+				50DFFCC2200498AD00D66980 /* HelperClasses */,
+				50DFFCA62004916A00D66980 /* ThirdPartiesLibs */,
 				802AD64620035D6E00A94059 /* Models */,
-				802AD64720035D8100A94059 /* ThirdPartyLibraries */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -209,6 +333,7 @@
 		802AD64320035D3100A94059 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50DFFCC0200496D000D66980 /* TrailMapper.sqlite */,
 				802AD61920035D0200A94059 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -219,7 +344,8 @@
 			children = (
 				802AD61420035D0200A94059 /* TMLandingPageViewController.swift */,
 				80680BF120039F0800BED446 /* TMTrailViewController.swift */,
-				80680BF52004271F00BED446 /* TMTrailLocationViewController.swift */,
+				503F1A7C2004F9690011183E /* TMTrailMapLocationViewController.swift */,
+				503F1A7E200501660011183E /* TMAllTrailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,42 +360,29 @@
 		802AD64620035D6E00A94059 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				507554882005E3CF00B9A2E6 /* TMTrails.swift */,
+				507554872005E3CF00B9A2E6 /* TMTrailsModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		802AD64720035D8100A94059 /* ThirdPartyLibraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdPartyLibraries;
-			sourceTree = "<group>";
-		};
-		802AD64820035D9400A94059 /* HelperClasses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HelperClasses;
 			sourceTree = "<group>";
 		};
 		802AD64920035DAF00A94059 /* APIWrapper */ = {
 			isa = PBXGroup;
 			children = (
 				80E4890D20038B99008266CC /* TMAPIManager.swift */,
+				5075548B2005F3A200B9A2E6 /* TMWebServiceWrapper.swift */,
 			);
 			path = APIWrapper;
-			sourceTree = "<group>";
-		};
-		802AD64A20035DC000A94059 /* DatabaseWrapper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DatabaseWrapper;
 			sourceTree = "<group>";
 		};
 		80680BF72004E60B00BED446 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				805D7D1D20060CBE00D39D50 /* trail_section72.json */,
+				805D7D2020060CBF00D39D50 /* trail_sections.json */,
+				805D7D1F20060CBF00D39D50 /* trail62_sections.json */,
+				805D7D1E20060CBE00D39D50 /* trail62.json */,
+				805D7D2120060CBF00D39D50 /* trails.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -351,7 +464,7 @@
 				TargetAttributes = {
 					802AD60E20035D0200A94059 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					802AD62220035D0200A94059 = {
 						CreatedOnToolsVersion = 9.2;
@@ -391,7 +504,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */,
+				50DFFCB82004916A00D66980 /* AlertView.xib in Resources */,
 				802AD61A20035D0200A94059 /* Assets.xcassets in Resources */,
+				50DFFCC1200496D000D66980 /* TrailMapper.sqlite in Resources */,
 				802AD61820035D0200A94059 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +515,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805D7D2320060CBF00D39D50 /* trail62.json in Resources */,
+				805D7D2220060CBF00D39D50 /* trail_section72.json in Resources */,
+				805D7D2520060CBF00D39D50 /* trail_sections.json in Resources */,
+				805D7D2420060CBF00D39D50 /* trail62_sections.json in Resources */,
+				805D7D2620060CBF00D39D50 /* trails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,13 +605,15 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ALCameraViewController/ALCameraViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ALCameraViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -571,11 +693,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DFFCBA2004916A00D66980 /* CRNotification.swift in Sources */,
+				5075548A2005E3CF00B9A2E6 /* TMTrails.swift in Sources */,
 				802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */,
-				80680BF62004271F00BED446 /* TMTrailLocationViewController.swift in Sources */,
+				50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */,
 				80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */,
+				50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */,
+				50DFFCCC20049CB300D66980 /* TMConstants.swift in Sources */,
+				50DFFCBC2004916A00D66980 /* FMDatabaseAdditions.m in Sources */,
 				80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */,
+				50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */,
+				503F1A7F200501660011183E /* TMAllTrailsViewController.swift in Sources */,
 				802AD61320035D0200A94059 /* AppDelegate.swift in Sources */,
+				507554892005E3CF00B9A2E6 /* TMTrailsModel.swift in Sources */,
+				50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */,
+				503F1A7B2004C8260011183E /* TMUtility.swift in Sources */,
+				50DFFCC720049BBE00D66980 /* TMDataWrapperManager.swift in Sources */,
+				5075548C2005F3A200B9A2E6 /* TMWebServiceWrapper.swift in Sources */,
+				503F1A7D2004F9690011183E /* TMTrailMapLocationViewController.swift in Sources */,
+				50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */,
+				50DFFCBB2004916A00D66980 /* FMDatabase.m in Sources */,
+				50DFFCC4200498AE00D66980 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,12 +880,15 @@
 			baseConfigurationReference = D5E6CAE640ECDC6F0D638DA8 /* Pods-TrailMapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LDS87PU2DA;
 				INFOPLIST_FILE = TrailMapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kartoza.TrailMapper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kartoza.trailmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6fb3be04-3d64-42af-b912-1533faa51c18";
+				PROVISIONING_PROFILE_SPECIFIER = "Trail Mapper Development Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = TrailMapper_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -758,12 +899,15 @@
 			baseConfigurationReference = 95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LDS87PU2DA;
 				INFOPLIST_FILE = TrailMapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kartoza.TrailMapper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kartoza.trailmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6fb3be04-3d64-42af-b912-1533faa51c18";
+				PROVISIONING_PROFILE_SPECIFIER = "Trail Mapper Development Profile";
+				SWIFT_OBJC_BRIDGING_HEADER = TrailMapper_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
