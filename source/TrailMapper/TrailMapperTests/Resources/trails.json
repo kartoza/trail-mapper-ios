@@ -1,0 +1,26 @@
+{
+	"trails": [
+		{
+			"name": "Die Plaat Hike",
+			"colour": "#ff018d",
+			"pkuid": 1,
+			"id": 62,
+			"geom": "POINT(0 0)",
+			"image": null,
+			"offset": 2,
+			"guid": "072d95e0-7254-472b-8142-35bd818a5e73",
+			"notes": "Example note from null island"
+		},
+		{
+			"name": "Klipspringer trail",
+			"colour": "#ff018d",
+			"pkuid": 1,
+			"id": 63,
+			"geom": "POINT(1 1)",
+			"image": null,
+			"offset": 2,
+			"guid": "072d95e0-7254-472b-8142-35bd818a5e77",
+			"notes": "Example note from one island"
+		}
+	]
+}
