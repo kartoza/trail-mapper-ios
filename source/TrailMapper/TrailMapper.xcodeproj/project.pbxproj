@@ -42,6 +42,8 @@
 		80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80680BF120039F0800BED446 /* TMTrailViewController.swift */; };
 		80680BF42003A04C00BED446 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80680BF32003A04C00BED446 /* CoreLocation.framework */; };
 		80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4890D20038B99008266CC /* TMAPIManager.swift */; };
+		80E9C40B2006524900DE63A3 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E9C40A2006524900DE63A3 /* categories.json */; };
+		80E9C40D2006532200DE63A3 /* grades.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E9C40C2006532200DE63A3 /* grades.json */; };
 		B9DC6A2B9A99E0BB9965D10B /* Pods_TrailMapperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */; };
 		FC3DB36293078F109CA233A8 /* Pods_TrailMapperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		80680BF120039F0800BED446 /* TMTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailViewController.swift; sourceTree = "<group>"; };
 		80680BF32003A04C00BED446 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		80E4890D20038B99008266CC /* TMAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAPIManager.swift; sourceTree = "<group>"; };
+		80E9C40A2006524900DE63A3 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		80E9C40C2006532200DE63A3 /* grades.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grades.json; sourceTree = "<group>"; };
 		95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper.release.xcconfig"; sourceTree = "<group>"; };
 		B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD35A7C232E8EB29823E7D8 /* Pods-TrailMapperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperUITests/Pods-TrailMapperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 		80680BF72004E60B00BED446 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80E9C40C2006532200DE63A3 /* grades.json */,
+				80E9C40A2006524900DE63A3 /* categories.json */,
 				805D7D1D20060CBE00D39D50 /* trail_section72.json */,
 				805D7D2020060CBF00D39D50 /* trail_sections.json */,
 				805D7D1F20060CBF00D39D50 /* trail62_sections.json */,
@@ -515,11 +521,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E9C40D2006532200DE63A3 /* grades.json in Resources */,
 				805D7D2320060CBF00D39D50 /* trail62.json in Resources */,
 				805D7D2220060CBF00D39D50 /* trail_section72.json in Resources */,
 				805D7D2520060CBF00D39D50 /* trail_sections.json in Resources */,
 				805D7D2420060CBF00D39D50 /* trail62_sections.json in Resources */,
 				805D7D2620060CBF00D39D50 /* trails.json in Resources */,
+				80E9C40B2006524900DE63A3 /* categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
