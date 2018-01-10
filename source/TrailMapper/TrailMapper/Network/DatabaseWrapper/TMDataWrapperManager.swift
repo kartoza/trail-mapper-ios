@@ -10,21 +10,21 @@ import UIKit
 
 class TMDataWrapperManager: NSObject {
 
+    var SDDataWrapperBlockHandler: ((NSMutableArray?, NSDictionary?,NSError?) -> Void)? = nil
+
     static var sharedInstance:TMDataWrapperManager {
         struct Static  {
             static let instance:TMDataWrapperManager = TMDataWrapperManager()
         }
         return Static.instance
     }
-    
-    var SDDataWrapperBlockHandler: ((NSMutableArray?, NSDictionary?,NSError?) -> Void)? = nil
 
-    // Function Purpose : To get the trails from local storage
-    /** Params
-            trailId : Pass the trail identifer ID
-
-     // Response : 
-    **/
+    /**
+     // Function Purpose : To get the trails from local storage
+     //Params
+                * trailId : Pass the trail identifer ID
+     // Response :  Get response (trails array/dictionary) through block handler function.
+     **/
     func callToGetTrailsFromDB(trailId:String)
     {
         var trailsArray = NSMutableArray.init()
@@ -37,7 +37,7 @@ class TMDataWrapperManager: NSObject {
         }
 
         for trails in trailsArray {
-            let trailModel = TMTrail.init(object: trails)
+            let trailModel = TMTrails.init(object: trails)
             trailsModelArray.addObjects(from: [trailModel])
         }
 
@@ -47,7 +47,14 @@ class TMDataWrapperManager: NSObject {
         }
     }
 
-    func saveTrailToLocalDatabase(trailModel:TMTrail)
+    /**
+     // Function Purpose : To save the trails onlocal storage
+     //Params
+                    * trailModel : Pass the trail model
+     // Response :
+     **/
+
+    func saveTrailToLocalDatabase(trailModel:TMTrails)
     {
         SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_MAPPER_TABLE)(pkuid,id, name,notes,image,guid,colour,offset) VALUES ('\(trailModel.pkuid ?? 0)','\(trailModel.id!)','\(trailModel.name ?? "")','\(trailModel.notes ?? "NA")','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)')")
     }

@@ -30,6 +30,7 @@ class TMTrailMapLocationVControllerViewController: UIViewController,MKMapViewDel
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
 
+        // Show users current location icon on map
         trailLocationMapView.showsUserLocation = true
     }
 
@@ -60,6 +61,7 @@ class TMTrailMapLocationVControllerViewController: UIViewController,MKMapViewDel
         self.getCenterMapOnLocation(location: location)
     }
 
+    // Used this fuctions to show centralize/zoom users current location on map.
     func getCenterMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius, regionRadius)

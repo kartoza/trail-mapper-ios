@@ -38,6 +38,7 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
         let saveTrailButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(self.btnSaveTrailTapped))
         self.navigationItem.rightBarButtonItem = saveTrailButton
 
+        // Get all trails for debug purpose, need to be remove afterwords
         self.getAllTrails()
     }
     
@@ -83,6 +84,8 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
             self?.trailImage.image = image
             self?.dismiss(animated: true, completion: nil)
             self?.addImageButton.setTitle("Change image ...", for: UIControlState.normal)
+
+            // Save current capture image to local refernece path through utility funtion (SaveImage)
             self?.trailImageLocalPath = TMUtility.sharedInstance.saveImage(imagetoConvert: image!, name: "trail_2.png")
         }
         
@@ -90,18 +93,17 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
 
     }
 
-    // Save btn event
+    // Save btn event : To save all trail info into Local database
     @objc func btnSaveTrailTapped() {
-        // Code to save all trail info into Local database
-        if self.validateTrailInputs() {
 
+        if self.validateTrailInputs() {
             //Create trail model from inputs
-            let newTrailModel = TMTrail.init(object: [])
+            let newTrailModel = TMTrails.init(object: [])
 
             newTrailModel.name = self.txtFieldTrailName.text
-            newTrailModel.notes = "notes txt"
+            newTrailModel.notes = "notes txt" // Hard coded value , need to implement Add notes feature
             newTrailModel.image = self.trailImageLocalPath
-            newTrailModel.id = 2
+            newTrailModel.id = 2 // Hard coded value , need to discuss about this
 
             TMDataWrapperManager.sharedInstance.saveTrailToLocalDatabase(trailModel:newTrailModel )
         }
@@ -134,6 +136,8 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
     }
 
     //MARK: - UITextField delgate methods
+
+    // This will be useful for returning keyboard if user hits return button
      func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

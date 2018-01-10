@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		503F1A742004AE780011183E /* TMTrailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A732004AE780011183E /* TMTrailModel.swift */; };
-		503F1A782004B2D70011183E /* TMTrail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A772004B2D70011183E /* TMTrail.swift */; };
 		503F1A7B2004C8260011183E /* TMUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7A2004C8260011183E /* TMUtility.swift */; };
 		503F1A7D2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7C2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift */; };
 		503F1A7F200501660011183E /* TMAllTrailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F1A7E200501660011183E /* TMAllTrailsViewController.swift */; };
+		507554892005E3CF00B9A2E6 /* TMTrailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507554872005E3CF00B9A2E6 /* TMTrailsModel.swift */; };
+		5075548A2005E3CF00B9A2E6 /* TMTrails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507554882005E3CF00B9A2E6 /* TMTrails.swift */; };
+		5075548C2005F3A200B9A2E6 /* TMWebServiceWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075548B2005F3A200B9A2E6 /* TMWebServiceWrapper.swift */; };
 		50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCA82004916A00D66980 /* AlertManager.swift */; };
 		50DFFCB82004916A00D66980 /* AlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50DFFCA92004916A00D66980 /* AlertView.xib */; };
 		50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFFCAA2004916A00D66980 /* AlertViewController.swift */; };
@@ -61,11 +62,12 @@
 		1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DFCB6951D619F19AC3D7956 /* Pods_TrailMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		503F1A722004A91B0011183E /* TrailMapper_Bridging_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailMapper_Bridging_Header.h; sourceTree = "<group>"; };
-		503F1A732004AE780011183E /* TMTrailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailModel.swift; sourceTree = "<group>"; };
-		503F1A772004B2D70011183E /* TMTrail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTrail.swift; sourceTree = "<group>"; };
 		503F1A7A2004C8260011183E /* TMUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMUtility.swift; sourceTree = "<group>"; };
 		503F1A7C2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailMapLocationVControllerViewController.swift; sourceTree = "<group>"; };
 		503F1A7E200501660011183E /* TMAllTrailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAllTrailsViewController.swift; sourceTree = "<group>"; };
+		507554872005E3CF00B9A2E6 /* TMTrailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTrailsModel.swift; sourceTree = "<group>"; };
+		507554882005E3CF00B9A2E6 /* TMTrails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMTrails.swift; sourceTree = "<group>"; };
+		5075548B2005F3A200B9A2E6 /* TMWebServiceWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMWebServiceWrapper.swift; sourceTree = "<group>"; };
 		50DFFCA82004916A00D66980 /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		50DFFCA92004916A00D66980 /* AlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertView.xib; sourceTree = "<group>"; };
 		50DFFCAA2004916A00D66980 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
@@ -347,8 +349,8 @@
 		802AD64620035D6E00A94059 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				503F1A772004B2D70011183E /* TMTrail.swift */,
-				503F1A732004AE780011183E /* TMTrailModel.swift */,
+				507554882005E3CF00B9A2E6 /* TMTrails.swift */,
+				507554872005E3CF00B9A2E6 /* TMTrailsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				80E4890D20038B99008266CC /* TMAPIManager.swift */,
+				5075548B2005F3A200B9A2E6 /* TMWebServiceWrapper.swift */,
 			);
 			path = APIWrapper;
 			sourceTree = "<group>";
@@ -663,10 +666,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				50DFFCBA2004916A00D66980 /* CRNotification.swift in Sources */,
+				5075548A2005E3CF00B9A2E6 /* TMTrails.swift in Sources */,
 				802AD61520035D0200A94059 /* TMLandingPageViewController.swift in Sources */,
 				50DFFCB92004916A00D66980 /* AlertViewController.swift in Sources */,
 				80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */,
-				503F1A782004B2D70011183E /* TMTrail.swift in Sources */,
 				50DFFCB72004916A00D66980 /* AlertManager.swift in Sources */,
 				50DFFCCC20049CB300D66980 /* TMConstants.swift in Sources */,
 				50DFFCBC2004916A00D66980 /* FMDatabaseAdditions.m in Sources */,
@@ -674,10 +677,11 @@
 				50DFFCBF2004916A00D66980 /* SCIDatabaseDAO.m in Sources */,
 				503F1A7F200501660011183E /* TMAllTrailsViewController.swift in Sources */,
 				802AD61320035D0200A94059 /* AppDelegate.swift in Sources */,
+				507554892005E3CF00B9A2E6 /* TMTrailsModel.swift in Sources */,
 				50DFFCBE2004916A00D66980 /* FMResultSet.m in Sources */,
-				503F1A742004AE780011183E /* TMTrailModel.swift in Sources */,
 				503F1A7B2004C8260011183E /* TMUtility.swift in Sources */,
 				50DFFCC720049BBE00D66980 /* TMDataWrapperManager.swift in Sources */,
+				5075548C2005F3A200B9A2E6 /* TMWebServiceWrapper.swift in Sources */,
 				503F1A7D2004F9690011183E /* TMTrailMapLocationVControllerViewController.swift in Sources */,
 				50DFFCBD2004916A00D66980 /* FMDBUtils.m in Sources */,
 				50DFFCBB2004916A00D66980 /* FMDatabase.m in Sources */,

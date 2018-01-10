@@ -14,7 +14,7 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var tblAllTrails: UITableView!
 
     //MARK:- Variables & Constants
-
+    var trailsArray = [TMTrails]()
 
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -22,6 +22,9 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
 
         // Do any additional setup after loading the view.
         self.tblAllTrails.tableFooterView = UIView()
+
+        //Make call to get all trail list from server
+        self.callToGetAllTrailsFromServer()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,27 +46,49 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
     //MARK:- UITableview Delegates & DataSources
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        return 100
-
+        return 100 // This will be going to change as per design requirement
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5 // Replace 5 with the acutal number of trails which we get from trails API
+        return self.trailsArray.count
     }
 
     // This method will enlist all the available trails
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let trailCell = tableView.dequeueReusableCell(withIdentifier: "TMTrailsListTableViewCell", for: indexPath) as! TMTrailsListTableViewCell
 
-        trailCell.lblTrailName.text = " Trail \(indexPath.row + 1)"
-        trailCell.lblTrailShortNote.text = " Trail \(indexPath.row + 1) short note"
+        let trail = self.trailsArray[indexPath.row]
+
+        trailCell.lblTrailName.text = trail.name
+        trailCell.lblTrailShortNote.text = trail.guid // This for debug purpose will replace with any other attribute.
 
         return trailCell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Selection code if user selects any trails
+    }
+
+
+    // Web service wrapper call to fetch trails from server instance
+    func callToGetAllTrailsFromServer(){
+
+        let reqstParams:[String:Any] = ["":""]
+
+        TMWebServiceWrapper.getTrailsFromServer(KMethodType:.kTypePOST, APIName: TMConstants.kWS_GET_TRAILS, Parameters: reqstParams, onSuccess: { (response) in
+
+            let trailsModel = response as! TMTrailsModel
+
+            if ((trailsModel.trails?.count) ?? 0) > 0 {
+                self.trailsArray = trailsModel.trails ?? []
+                self.tblAllTrails.reloadData()
+            }else {
+                AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: "Any failure message", PositiveTitle: TMConstants.kAlertTypeOK)
+            }
+
+        }) { (error) in
+            AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: error.debugDescription, PositiveTitle: TMConstants.kAlertTypeOK)
+        }
     }
 
 }

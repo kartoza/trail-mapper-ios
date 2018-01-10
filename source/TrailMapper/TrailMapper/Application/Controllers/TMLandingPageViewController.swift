@@ -47,7 +47,7 @@ class TMLandingPageViewController: UIViewController {
                 print("Trail Array --->", responseArray ?? "")
 
                 for trailModel in responseArray! {
-                    let trail = trailModel as! TMTrail
+                    let trail = trailModel as! TMTrails
                     if (trail.guid == nil)  {
                         print(" Trails : \(String(describing: trail.name!)) needs to sync with server")
                     }
