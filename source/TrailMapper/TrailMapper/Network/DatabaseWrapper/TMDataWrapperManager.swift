@@ -22,7 +22,7 @@ class TMDataWrapperManager: NSObject {
     /**
      // Function Purpose : To get the trails from local storage
      //Params
-                * trailId : Pass the trail identifer ID
+     * trailId : Pass the trail identifer ID
      // Response :  Get response (trails array/dictionary) through block handler function.
      **/
     func callToGetTrailsFromDB(trailId:String)
@@ -31,9 +31,9 @@ class TMDataWrapperManager: NSObject {
         let trailsModelArray = NSMutableArray.init()
         
         if trailId == "" {
-            trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_MAPPER_TABLE)", type: "SELECT")
+            trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE)", type: "SELECT")
         }else {
-            trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_MAPPER_TABLE) WHERE id='\(trailId)'", type: "SELECT")
+            trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE) WHERE id='\(trailId)'", type: "SELECT")
         }
 
         for trails in trailsArray {
@@ -50,13 +50,53 @@ class TMDataWrapperManager: NSObject {
     /**
      // Function Purpose : To save the trails onlocal storage
      //Params
-                    * trailModel : Pass the trail model
+     * trailModel : Pass the trail model
      // Response :
      **/
 
     func saveTrailToLocalDatabase(trailModel:TMTrails)
     {
-        SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_MAPPER_TABLE)(pkuid,id, name,notes,image,guid,colour,offset) VALUES ('\(trailModel.pkuid ?? 0)','\(trailModel.id!)','\(trailModel.name ?? "")','\(trailModel.notes ?? "NA")','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)')")
+        let trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE) WHERE guid='\(String(describing: trailModel.guid ?? ""))'", type: "SELECT")
+
+        if (trailsArray?.count ?? 0) > 0 {
+            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_TABLE) set id = '\(trailModel.id!)',name = '\(trailModel.name ?? "")',notes = 'No Notes',image_path = '\(trailModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geometry = '\(trailModel.geom ?? "")' where id = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
+        }else {
+            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_TABLE)(id, name,notes,image_path,guid,colour,offset,geometry) VALUES ('\(trailModel.id!)','\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
+
+            if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
+            {
+                if dbOperationStatus {
+                    webServiceWrapperBlockHandler([], nil,nil)
+                }else {
+                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Operation failed"])
+                    webServiceWrapperBlockHandler([], nil,error)
+                }
+            }
+        }
+    }
+    
+    func saveTrailSectionsToLocalDatabase(trailSectionModel:TMTrailSections)
+    {
+
+        //This will be dependant on JSON response of TrailSection API
+
+        //        let trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_SECTION_TABLE) WHERE guid='\(String(describing: trailSectionModel.guid ?? ""))'", type: "SELECT")
+        //
+        //        if (trailsArray?.count ?? 0) > 0 {
+        //            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_SECTION_TABLE) set id = '\(trailSectionModel.id!)',name = '\(trailSectionModel.name ?? "")',notes = 'No Notes',image_path = '\(trailSectionModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geometry = '\(trailModel.geom ?? "")' where id = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
+        //        }else {
+        //            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_SECTION_TABLE)(id, name,notes,image_path,guid,colour,offset,geometry) VALUES ('\(trailModel.id!)','\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
+        //
+        //            if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
+        //            {
+        //                if dbOperationStatus {
+        //                    webServiceWrapperBlockHandler([], nil,nil)
+        //                }else {
+        //                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Operation failed"])
+        //                    webServiceWrapperBlockHandler([], nil,error)
+        //                }
+        //            }
+        //        }
     }
     
 }

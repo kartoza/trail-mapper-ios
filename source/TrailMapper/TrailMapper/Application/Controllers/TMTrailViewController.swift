@@ -104,19 +104,40 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
             newTrailModel.name = self.txtFieldTrailName.text
             newTrailModel.notes = "notes txt" // Hard coded value , need to implement Add notes feature
             newTrailModel.image = self.trailImageLocalPath
-            newTrailModel.id = 2 // Hard coded value , need to discuss about this
+            // Hard coded value , need to discuss about this
+            newTrailModel.id = 3
+            newTrailModel.guid = "121233"
+            newTrailModel.offset = 3
 
-            TMDataWrapperManager.sharedInstance.saveTrailToLocalDatabase(trailModel:newTrailModel )
+            let dataManagerWrapper = TMDataWrapperManager()
+
+            dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
+                if (responseArray?.count)! > 0 {
+
+                    if error == nil {
+                        AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveSuccess, PositiveTitle: TMConstants.kAlertTypeOK, NegativeTitle: "", onPositive: {
+                            // On successful save operation move back to main menu.
+                            self.navigationController?.popViewController(animated: true)
+                        }, onNegative: {
+                            //Do nothing
+                        })
+                    }else {
+                        AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveFail, PositiveTitle: TMConstants.kAlertTypeOK)
+                    }
+                }
+            }
+            dataManagerWrapper.saveTrailToLocalDatabase(trailModel:newTrailModel )
+
         }
     }
 
 
-     // MARK: - Custom Class Functions
+    // MARK: - Custom Class Functions
 
     // Validate the input parameters for saving trail
     func validateTrailInputs()-> Bool {
         if (self.txtFieldTrailName.text?.isEmpty)! {
-            AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: "Please enter valid trail name", PositiveTitle: TMConstants.kAlertTypeOK)
+            AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message:TMConstants.kAlertTrailsVailidName, PositiveTitle: TMConstants.kAlertTypeOK)
             return false
         }
 
@@ -127,19 +148,19 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
     func getAllTrails() {
         let dataManagerWrapper = TMDataWrapperManager()
 
-            dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
-                if (responseArray?.count)! > 0 {
-                    print("Trail Array --->", responseArray ?? "")
+        dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
+            if (responseArray?.count)! > 0 {
+                print("Trail Array --->", responseArray ?? "")
 
-                }
             }
+        }
         dataManagerWrapper.callToGetTrailsFromDB(trailId: "")
     }
 
     //MARK: - UITextField delgate methods
 
     // This will be useful for returning keyboard if user hits return button
-     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
