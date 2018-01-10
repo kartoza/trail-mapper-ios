@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class TMTrailMapLocationVControllerViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate{
+class TMTrailMapLocationViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate{
 
     //MARK:- IBOutlets
     @IBOutlet weak var trailLocationMapView: MKMapView!
