@@ -1,7 +1,6 @@
 {
 	"name": "Die Plaat Hike",
 	"colour": "#ff018d",
-	"pkuid": 1,
 	"id": 62,
 	"geom": "POINT(0 0)",
 	"image": null,
