@@ -1,0 +1,33 @@
+{
+	"grades": [{
+			"guid": "34ebcde5-91c4-4b6b-b98e-da7e7942e46c",
+			"name": "level",
+			"image": ""
+		},
+		{
+			"guid": "01637f9e-6750-45d1-917e-c51d0684d7d2",
+			"name": "gentle incline",
+			"image": null
+		},
+		{
+			"guid": "8f78a54b-30d4-4d59-8fd6-4d52f3cc2272",
+			"name": "moderate incline",
+			"image": null
+		},
+		{
+			"guid": "b6a817ed-36d6-4382-9356-8b1464b84a41",
+			"name": "steep incline",
+			"image": null
+		},
+		{
+			"guid": "de0227b1-709a-4dae-b226-1a50d1d8c622",
+			"name": "vertical or near vertical",
+			"image": null
+		},
+		{
+			"guid": "e0efbcc6-723a-4093-a125-5fe6944b525b",
+			"name": "difficult to traverse",
+			"image": null
+		}
+	]
+}
