@@ -1,0 +1,21 @@
+{
+	"trail_sections": [{
+			"name": "none",
+			"grade": 0,
+			"notes": "none",
+			"geom": "LINESTRING ZM (20.464752631843 -33.9916888367838 0 0,20.464755400639 -33.9916895384963 0 0)",
+			"image": null,
+			"guid": "77aee729-510d-47c8-8f8b-745ec2eb4883",
+			"id": 72
+		},
+		{
+			"name": "Jeep track",
+			"grade": 0,
+			"notes": "none",
+			"geom": "LINESTRING Z (20.4569393711756 -33.9990903382407 0,20.4567170605235 -33.9990026866315 0)",
+			"image": null,
+			"guid": "40739e8d-cac9-4243-880f-18aebaf698c5",
+			"id": 85
+		}
+	]
+}
