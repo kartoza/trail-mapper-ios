@@ -4,7 +4,7 @@ CREATE TABLE "category" ("guid" TEXT PRIMARY KEY NOT NULL UNIQUE, "name" TEXT NO
 
 -- Trail table
 
-CREATE TABLE "trail" ("guid" TEXT PRIMARY KEY NOT NULL UNIQUE, "name" TEXT NOT NULL, "notes" TEXT, "offset" REAL NOT NULL DEFAULT 0.0, "colour" TEXT NOT NULL, "image_path" TEXT, "geometry" TEXT NOT NULL, "synchronised" BOOL DEFAULT 0);
+CREATE TABLE "trail" ("guid" TEXT PRIMARY KEY NOT NULL UNIQUE, "name" TEXT NOT NULL, "notes" TEXT, "offset" REAL NOT NULL DEFAULT 0.0, "colour" TEXT NOT NULL, "image" TEXT, "geom" TEXT NOT NULL, "synchronised" BOOL DEFAULT 0);
 
 -- Grade lookup table for trail_sections
 
@@ -12,8 +12,7 @@ CREATE TABLE "grade" ("guid" TEXT PRIMARY KEY NOT NULL UNIQUE, "name" TEXT NOT N
 
 -- Trail Section table
 
-Drop table trail_section;
-CREATE TABLE "trail_section" ("guid" TEXT PRIMARY KEY NOT NULL UNIQUE, "name" TEXT NOT NULL, "notes" TEXT, "offset" REAL NOT NULL DEFAULT 0.0, "grade_guid" INTEGER NOT NULL REFERENCES  "grade"("guid") ON DELETE RESTRICT ON UPDATE CASCADE, "image_path" TEXT, "geometry" TEXT NOT NULL, "date_time_start" TIMESTAMP, "date_time_end" TIMESTAMP, "synchronised" BOOL DEFAULT 0);
+CREATE TABLE "trail_section" ("guid" TEXT PRIMARY KEY NOT NULL UNIQUE, "name" TEXT NOT NULL, "notes" TEXT, "offset" REAL NOT NULL DEFAULT 0.0, "grade_guid" INTEGER NOT NULL REFERENCES  "grade"("guid") ON DELETE RESTRICT ON UPDATE CASCADE, "image" TEXT, "geom" TEXT NOT NULL, "date_time_start" TIMESTAMP, "date_time_end" TIMESTAMP, "synchronised" BOOL DEFAULT 0);
 
 -- Point of interest table
 
@@ -46,4 +45,14 @@ INSERT INTO "category" ( "guid","name","image" ) VALUES ( 'e3e1eeca-1743-4375-8a
 INSERT INTO "category" ( "guid","name","image" ) VALUES ( '4f247594-b159-4704-aa42-5ec6081bf0cd','pollution',NULL );
 INSERT INTO "category" ( "guid","name","image" ) VALUES ( '96dea52d-e962-4106-8e64-ad9023264f87','vandalism',NULL );
 INSERT INTO "category" ( "guid","name","image" ) VALUES ( 'd68582fb-09c1-422d-8140-d22739ada83f','other',NULL );
+
+-- trails
+insert into trail (name, notes, offset, colour, image, guid, geom) values ("Die Plaat Hike","","2.00000","#ff018d","images/Marloth-with-WHS-logo-1.jpg","072d95e0-7254-472b-8142-35bd818a5e73","POINT(0 0)");
+ insert into trail (name, notes, offset, colour, image, guid, geom) values ("5 Day Trail","","-2.00000","#000000","images/Marloth-with-WHS-logo-1.jpg","abf786a1-7877-4de6-a0d2-44f717e7363b","POINT(0 0)");
+ insert into trail (name, notes, offset, colour, image, guid, geom) values ("Duiwelsbos","","1.00000","#0cfe00","images/Marloth-with-WHS-logo-1.jpg","0736c979-1f26-4e25-90c8-6c03e1745739","POINT(0 0)");
+ insert into trail (name, notes, offset, colour, image, guid, geom) values ("Die Plaat Run","","0.00000","#d101ff","images/Marloth-with-WHS-logo-1.jpg","9b2242ee-5009-43b9-aa2a-9dbc0d50eee7","POINT(0 0)");
+ insert into trail (name, notes, offset, colour, image, guid, geom) values ("Koloniesbos","","0.00000","#139b89","images/Marloth-with-WHS-logo-1.jpg","84a6d7f7-e7ae-4a2a-903b-77cbd5939b9d","POINT(0 0)");
+ insert into trail (name, notes, offset, colour, image, guid, geom) values ("Boskloof Hut","","0.00000","#0000fe","images/Marloth-with-WHS-logo-1.jpg","0d362ad2-8588-47f4-bb0e-740322f46ba9","POINT(0 0)");
+ insert into trail (name, notes, offset, colour, image, guid, geom) values ("10 Uur kop","","3.00000","#7799ff","images/Marloth-with-WHS-logo-1.jpg","1d57ddc9-68f2-49c3-ba25-9e68bc2efcda","POINT(0 0)");
+
 

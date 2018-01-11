@@ -623,3 +623,6 @@ ALTER TABLE ONLY trail_sections
 -- PostgreSQL database dump complete
 --
 
+
+-- make sure we have a default image so that our sqlite exports can work
+update trails.trail set image='images/Marloth-with-WHS-logo-1.jpg';
