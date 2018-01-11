@@ -10,10 +10,9 @@ import ALCameraViewController
 import CoreLocation
 import UIKit
 
-class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextFieldDelegate {
+class TMTrailViewController: UIViewController,UITextFieldDelegate {
     
     //MARK:- IBOutlets
-    
     @IBOutlet weak var trailImage: UIImageView!
     @IBOutlet weak var addImageButton: UIButton!
     @IBOutlet weak var txtFieldTrailName: UITextField!
@@ -21,22 +20,23 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
     @IBOutlet weak var btnAddNotes: UIButton!
     
     //MARK:- Variables & Constants
-    let locationManager = CLLocationManager() // for getting GPS coords
     var currentLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
     var trailImageLocalPath = "No Image available"
+     let newTrailModel = TMTrails.init(object: [])
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // configuration for things relating to location manager.
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
 
         // Add save trail button in navigation bar
         let saveTrailButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(self.btnSaveTrailTapped))
         self.navigationItem.rightBarButtonItem = saveTrailButton
+
+        //Start updating user current location through TMLocationManager
+        TMLocationManager.sharedInstance.startUpdatingLocation()
+
+        //Generate UUID for new trail
+        newTrailModel.guid = UUID().uuidString
 
         // Get all trails for debug purpose, need to be remove afterwords
         self.getAllTrails()
@@ -48,36 +48,21 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == TMConstants.kSegueCreateTrailsToMap {
+            let locationMapController = segue.destination as! TMTrailMapLocationViewController
+            locationMapController.parentControllerForMapVC = .kCreateTrail
+        }
+    }
     
     // MARK: - Custom Class Functions
-    // MARK:- Core Location Methods
-    func locationManager(
-        _ manager: CLLocationManager,
-        didUpdateLocations locations: [CLLocation])
-    {
-        // I searched long and hard to get the location direct from the image.
-        // You can get it from a photo roll image but not one direclty captured
-        // by using the camera. See https://stackoverflow.com/a/42888731
-        // In particular read all the comments there carefully as there are a
-        // lot of red herrings where the question is answered based on useing
-        // the photo roll.  Because of all these issues, I opted to get the
-        // location direct from the GPS rather than the image
-        let location = locations[0]
-        self.currentLocationCoordinate = location.coordinate
-        print("Coordinates: \(self.currentLocationCoordinate.latitude)")
-        locationManager.stopUpdatingLocation()
+    @IBAction func btnShowOnMapTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: TMConstants.kSegueCreateTrailsToMap, sender: self)
     }
 
-    // MARK:- Image tap related methods
     @IBAction func getImage(_ sender: Any) {
         print("Get Image Button tapped")
         let cameraViewController = CameraViewController { [weak self] image, asset in
@@ -87,7 +72,7 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
             self?.addImageButton.setTitle("Change image ...", for: UIControlState.normal)
 
             // Save current capture image to local refernece path through utility funtion (SaveImage)
-            self?.trailImageLocalPath = TMUtility.sharedInstance.saveImage(imagetoConvert: image!, name: "trail_2.png")
+            self?.trailImageLocalPath = TMUtility.sharedInstance.saveImage(imagetoConvert: image!, name: "trail\(String(describing: self?.newTrailModel.guid!)).png")
         }
         
         present(cameraViewController, animated: true, completion: nil)
@@ -98,23 +83,20 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
     @objc func btnSaveTrailTapped() {
 
         if self.validateTrailInputs() {
-            //Create trail model from inputs
-            let newTrailModel = TMTrails.init(object: [])
-
+            //Get latest current location co-ordinates
+            self.currentLocationCoordinate = TMLocationManager.sharedInstance.latestLocationCoordinate
+            //update trail model from inputs
             newTrailModel.name = self.txtFieldTrailName.text
             newTrailModel.notes = "notes txt" // Hard coded value , need to implement Add notes feature
             newTrailModel.image = self.trailImageLocalPath
             // Hard coded value , need to discuss about this
             newTrailModel.id = 3
-            newTrailModel.guid = "121233"
             newTrailModel.geom = "POINT(\(self.currentLocationCoordinate.latitude ) \(self.currentLocationCoordinate.longitude ))"
             newTrailModel.offset = 3
 
             let dataManagerWrapper = TMDataWrapperManager()
 
             dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
-                if (responseArray?.count)! > 0 {
-
                     if error == nil {
                         AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveSuccess, PositiveTitle: TMConstants.kAlertTypeOK, NegativeTitle: "", onPositive: {
                             // On successful save operation move back to main menu.
@@ -125,7 +107,6 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
                     }else {
                         AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveFail, PositiveTitle: TMConstants.kAlertTypeOK)
                     }
-                }
             }
             dataManagerWrapper.saveTrailToLocalDatabase(trailModel:newTrailModel )
 
@@ -155,7 +136,7 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
 
             }
         }
-        dataManagerWrapper.callToGetTrailsFromDB(trailId: "")
+        dataManagerWrapper.callToGetTrailsFromDB(trailGUID: "")
     }
 
     //MARK: - UITextField delgate methods
