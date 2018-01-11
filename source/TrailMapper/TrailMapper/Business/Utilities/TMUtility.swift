@@ -37,7 +37,7 @@ class TMUtility: NSObject {
             if (responseArray?.count)! > 0 {
                 for trailModel in responseArray! {
                     let trail = trailModel as! TMTrails
-                    if (trail.guid == nil)  {
+                    if (Bool(trail.synchronised ?? "0") == false)   {
                         print(" Trails : \(String(describing: trail.name!)) needs to sync with server")
                         self.callToSaveTrailOnServer(trail: trail)
                     }
@@ -69,7 +69,7 @@ class TMUtility: NSObject {
             if (responseArray?.count)! > 0 {
                 for trailSectionModel in responseArray! {
                     let trailSection = trailSectionModel as! TMTrailSections
-                    if (trailSection.guid == nil)  {
+                    if (Bool(trailSection.synchronised ?? "0") == false)  {
                         print(" Trail Section : \(String(describing: trailSection.name!)) needs to sync with server")
                         self.callToSaveTrailSectionsOnServer(trailSection: trailSection)
                     }
@@ -103,7 +103,9 @@ class TMUtility: NSObject {
                     let trailSection = trailSectionModel as! TMTrailSections
                     // Check here the trail section has end time or not
                     // if end time not there then it will consider as trail section recording is going on
-                    // TMUtility.sharedInstance.recordingTrailSectionGUID = trailSection.guid ?? ""
+                    if trailSection.dateTimeEnd == nil {
+                         TMUtility.sharedInstance.recordingTrailSectionGUID = trailSection.guid ?? ""
+                    }
                 }
             }
         }

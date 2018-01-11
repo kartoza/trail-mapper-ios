@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("could not start reachability notifier")
         }
 
+        // To check that is there any recording is going or not
+        TMUtility.sharedInstance.checkForRecodringStatus()
+
         return true
     }
 

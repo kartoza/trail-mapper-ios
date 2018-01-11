@@ -102,6 +102,7 @@ class TMTrailMapLocationViewController: UIViewController,MKMapViewDelegate,CLLoc
     @objc func btnStopTrailRecordingTapped() {
         // Stop recording here
         AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailSectionRecordingStop, PositiveTitle: TMConstants.kAlertTypeYES, NegativeTitle: TMConstants.kAlertTypeNO, onPositive: {
+            TMDataWrapperManager.sharedInstance.saveCompleteStatusForTrailSection(trailSectionGUID: TMUtility.sharedInstance.recordingTrailSectionGUID)
             TMUtility.sharedInstance.recordingTrailSectionGUID = ""
             self.navigationController?.popToRootViewController(animated: true)
         }) {

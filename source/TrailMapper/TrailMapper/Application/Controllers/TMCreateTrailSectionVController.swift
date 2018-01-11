@@ -90,8 +90,9 @@ class TMCreateTrailSectionVController: UIViewController,UITextFieldDelegate {
             newTrailSectionModel.id = 3
             newTrailSectionModel.geom = "POINT(\(self.currentLocationCoordinate.latitude ) \(self.currentLocationCoordinate.longitude ))"
             newTrailSectionModel.offset = 3
+            newTrailSectionModel.dateTimeStart = "\(NSDate().timeIntervalSince1970 * 1000)"
 
-            let currentTimeStamp = "\(NSDate().timeIntervalSince1970 * 1000)"
+            let currentTimeStamp = NSDate().timeIntervalSince1970 * 1000
             print("Current TimeStamp for new trail section --->",currentTimeStamp)
 
             let dataManagerWrapper = TMDataWrapperManager()

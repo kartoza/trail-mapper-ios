@@ -116,9 +116,9 @@ class TMDataWrapperManager: NSObject {
         let trailsSectionArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_SECTION_TABLE) WHERE guid='\(String(describing: trailSectionModel.guid ?? ""))'", type: "SELECT")
 
         if (trailsSectionArray?.count ?? 0) > 0 {
-            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_SECTION_TABLE) set name = '\(trailSectionModel.name ?? "")',notes = 'No Notes',image_path = '\(trailSectionModel.imagePath ?? "")',offset = '\(trailSectionModel.offset ?? 0)',geometry = '\(trailSectionModel.geom ?? "")' where guid = '\(trailSectionModel.guid!)'") //(trailModel.notes!) Do later
+            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_SECTION_TABLE) set name = '\(trailSectionModel.name ?? "")',notes = 'No Notes',image = '\(trailSectionModel.imagePath ?? "")',offset = '\(trailSectionModel.offset ?? 0)',geom = '\(trailSectionModel.geom ?? "")' where guid = '\(trailSectionModel.guid!)'") //(trailModel.notes!) Do later
         }else {
-            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_SECTION_TABLE)(name,notes,image_path,guid,offset,geometry,grade_guid) VALUES ('\(trailSectionModel.name ?? "")','No Notes','\(trailSectionModel.imagePath ?? "NA")','\(trailSectionModel.guid ?? "")','\(trailSectionModel.offset ?? 0)','\(trailSectionModel.geom ?? "")','\("Grade_GUID")')") // ,'\(trailModel.notes ?? "NA")' Do later
+            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_SECTION_TABLE)(name,notes,image,guid,offset,geom,grade_guid,date_time_start) VALUES ('\(trailSectionModel.name ?? "")','No Notes','\(trailSectionModel.imagePath ?? "NA")','\(trailSectionModel.guid ?? "")','\(trailSectionModel.offset ?? 0)','\(trailSectionModel.geom ?? "")','\("Grade_GUID")','\(trailSectionModel.dateTimeStart ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
 
             if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
             {
@@ -131,5 +131,10 @@ class TMDataWrapperManager: NSObject {
             }
         }
     }
-    
+
+    func saveCompleteStatusForTrailSection(trailSectionGUID:String) {
+        let endTimeStamp = Double(NSDate().timeIntervalSince1970 * 1000)
+        SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_SECTION_TABLE) set date_time_end = '\(endTimeStamp)' where guid = '\(trailSectionGUID)'")
+    }
+
 }

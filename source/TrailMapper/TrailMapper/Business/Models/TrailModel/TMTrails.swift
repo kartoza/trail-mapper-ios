@@ -21,6 +21,8 @@ public final class TMTrails: NSCoding {
     static let guid = "guid"
     static let notes = "notes"
     static let image = "image"
+
+    static let synchronised = "synchronised"
   }
 
   // MARK: Properties
@@ -33,6 +35,8 @@ public final class TMTrails: NSCoding {
   public var guid: String?
   public var notes: String?
   public var image: String?
+
+    public var synchronised: String?
 
   // MARK: SwiftyJSON Initializers
   /// Initiates the instance based on the object.
@@ -56,6 +60,9 @@ public final class TMTrails: NSCoding {
     guid = json[SerializationKeys.guid].string
     notes = json[SerializationKeys.notes].string
     image = json[SerializationKeys.image].string
+
+    synchronised = json[SerializationKeys.synchronised].string
+
   }
 
   /// Generates description of the object in the form of a NSDictionary.
@@ -73,6 +80,8 @@ public final class TMTrails: NSCoding {
     if let value = notes { dictionary[SerializationKeys.notes] = value }
     if let value = image { dictionary[SerializationKeys.image] = value }
 
+    if let value = synchronised { dictionary[SerializationKeys.synchronised] = value }
+
     return dictionary
   }
 
@@ -87,6 +96,9 @@ public final class TMTrails: NSCoding {
     self.guid = aDecoder.decodeObject(forKey: SerializationKeys.guid) as? String
     self.notes = aDecoder.decodeObject(forKey: SerializationKeys.notes) as? String
     self.image = aDecoder.decodeObject(forKey: SerializationKeys.image) as? String
+
+    self.synchronised = aDecoder.decodeObject(forKey: SerializationKeys.synchronised) as? String
+
   }
 
   public func encode(with aCoder: NSCoder) {
@@ -99,6 +111,8 @@ public final class TMTrails: NSCoding {
     aCoder.encode(guid, forKey: SerializationKeys.guid)
     aCoder.encode(notes, forKey: SerializationKeys.notes)
     aCoder.encode(image, forKey: SerializationKeys.image)
+
+    aCoder.encode(synchronised, forKey: SerializationKeys.synchronised)
   }
 
 }
