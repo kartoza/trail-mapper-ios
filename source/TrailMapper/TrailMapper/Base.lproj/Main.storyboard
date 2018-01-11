@@ -61,7 +61,7 @@
                                     <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0MM-p1-2NE" kind="show" id="XYM-J1-Lms"/>
+                                    <action selector="btnStartRecordingTrailSectionClicked:" destination="Z1E-77-3G7" eventType="touchUpInside" id="uAr-OS-F6N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-BY-jkK">
@@ -117,6 +117,11 @@
                         <viewLayoutGuide key="safeArea" id="ydR-iL-t1Z"/>
                     </view>
                     <navigationItem key="navigationItem" id="63w-xg-q7O"/>
+                    <connections>
+                        <outlet property="btnStartTrailSection" destination="9ZY-Z0-ady" id="pcG-Qs-a3s"/>
+                        <segue destination="0MM-p1-2NE" kind="show" identifier="gotoAllTrailsSegue" id="R8J-f7-H7q"/>
+                        <segue destination="9CZ-wW-Hc7" kind="show" identifier="gotoTrailSectionMapSegue" id="wOd-mt-cfN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HdK-UO-HlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +166,7 @@
                                     <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9CZ-wW-Hc7" kind="show" id="rqk-xY-5Af"/>
+                                    <action selector="btnShowOnMapTapped:" destination="NmO-OG-2KQ" eventType="touchUpInside" id="RY9-2T-1ts"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bVW-CA-I4U">
@@ -218,6 +223,7 @@
                         <outlet property="btnSelectLocation" destination="Qff-jE-vwu" id="pCi-rW-WVa"/>
                         <outlet property="trailImage" destination="tjl-fG-3kM" id="Rbg-5l-dVO"/>
                         <outlet property="txtFieldTrailName" destination="kZo-jE-F2r" id="Diw-RE-XDi"/>
+                        <segue destination="9CZ-wW-Hc7" kind="show" identifier="goCreateTrailsMapsSegue" id="xTB-94-Qnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0CW-XK-0Lm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,11 +395,96 @@
                     <connections>
                         <outlet property="tblAllTrails" destination="rdy-WS-RfV" id="zg8-kf-pO8"/>
                         <segue destination="1eA-hy-GgZ" kind="show" identifier="trailSectionListSegue" id="Vft-rT-2wC"/>
+                        <segue destination="jGt-pN-Eq9" kind="show" identifier="createTrailSectionSegue" id="H9P-v6-BPS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oll-uI-WaI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="926" y="808"/>
+        </scene>
+        <!--Create Trail SectionV Controller-->
+        <scene sceneID="9fT-wU-D80">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m8J-gC-fFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="jGt-pN-Eq9" customClass="TMCreateTrailSectionVController" customModule="TrailMapper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uxO-T7-rgK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3g-TB-aDh">
+                                <rect key="frame" x="0.0" y="62" width="320" height="232"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="BFe-T7-kOZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAo-AC-2rS">
+                                <rect key="frame" x="0.0" y="294" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Xq-vB-ufy"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Add photo">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnAddImageTapped:" destination="jGt-pN-Eq9" eventType="touchUpInside" id="XHZ-NZ-gQP"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trail section name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wnr-bc-qaE">
+                                <rect key="frame" x="16" y="469" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="C0d-F9-WEb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jGt-pN-Eq9" id="Vns-4o-tSf"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4W-Um-V8T">
+                                <rect key="frame" x="16" y="516" width="288" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="9ib-6x-9MT"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Add notes">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fAA-mI-agt" firstAttribute="trailing" secondItem="uAo-AC-2rS" secondAttribute="trailing" id="2SI-4J-Kn4"/>
+                            <constraint firstItem="n4W-Um-V8T" firstAttribute="leading" secondItem="fAA-mI-agt" secondAttribute="leading" constant="16" id="4vb-U1-CID"/>
+                            <constraint firstItem="n4W-Um-V8T" firstAttribute="top" secondItem="wnr-bc-qaE" secondAttribute="bottom" constant="17" id="5GI-SJ-bgK"/>
+                            <constraint firstItem="uAo-AC-2rS" firstAttribute="leading" secondItem="fAA-mI-agt" secondAttribute="leading" id="8LH-Ck-i0g"/>
+                            <constraint firstItem="fAA-mI-agt" firstAttribute="trailing" secondItem="wnr-bc-qaE" secondAttribute="trailing" constant="16" id="Blw-24-yYE"/>
+                            <constraint firstItem="fAA-mI-agt" firstAttribute="bottom" secondItem="n4W-Um-V8T" secondAttribute="bottom" constant="20" id="MZU-KR-Ohu"/>
+                            <constraint firstItem="fAA-mI-agt" firstAttribute="top" secondItem="t3g-TB-aDh" secondAttribute="top" constant="2" id="RKL-Mi-kIu"/>
+                            <constraint firstItem="fAA-mI-agt" firstAttribute="trailing" secondItem="n4W-Um-V8T" secondAttribute="trailing" constant="16" id="U28-2d-CxZ"/>
+                            <constraint firstItem="t3g-TB-aDh" firstAttribute="leading" secondItem="fAA-mI-agt" secondAttribute="leading" id="V4q-Pe-VX7"/>
+                            <constraint firstItem="fAA-mI-agt" firstAttribute="trailing" secondItem="t3g-TB-aDh" secondAttribute="trailing" id="fKK-HV-kii"/>
+                            <constraint firstItem="uAo-AC-2rS" firstAttribute="bottom" secondItem="t3g-TB-aDh" secondAttribute="bottom" constant="30" id="qxO-NZ-PwO"/>
+                            <constraint firstItem="wnr-bc-qaE" firstAttribute="leading" secondItem="fAA-mI-agt" secondAttribute="leading" constant="16" id="uk3-ly-LhK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fAA-mI-agt"/>
+                    </view>
+                    <connections>
+                        <outlet property="addImageButton" destination="uAo-AC-2rS" id="xkX-a2-FcS"/>
+                        <outlet property="btnAddNotes" destination="n4W-Um-V8T" id="s70-8K-Wbo"/>
+                        <outlet property="trailSectionImage" destination="t3g-TB-aDh" id="iwP-5r-v1K"/>
+                        <outlet property="txtFieldTrailSectionName" destination="wnr-bc-qaE" id="cQ7-rI-jmu"/>
+                        <segue destination="9CZ-wW-Hc7" kind="show" identifier="trailSectionMapSegue" id="id7-he-Wyh"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1791" y="807"/>
         </scene>
         <!--Trail Map Location View Controller-->
         <scene sceneID="0SX-o4-ndW">
@@ -425,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOf-Wk-yUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790.625" y="795.42253521126759"/>
+            <point key="canvasLocation" x="2708" y="-286"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nai-pV-Dd4">
@@ -443,34 +534,11 @@
             </objects>
             <point key="canvasLocation" x="81" y="34"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="NIj-It-IgM">
-            <objects>
-                <viewController id="UGR-5G-YMd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bWx-lX-Zpj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kkW-GE-663">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="QuM-ak-q4z" firstAttribute="trailing" secondItem="kkW-GE-663" secondAttribute="trailing" id="5V4-TF-NfW"/>
-                            <constraint firstItem="QuM-ak-q4z" firstAttribute="bottom" secondItem="kkW-GE-663" secondAttribute="bottom" id="9Ts-Wx-VOU"/>
-                            <constraint firstItem="kkW-GE-663" firstAttribute="top" secondItem="QuM-ak-q4z" secondAttribute="top" id="FjR-xL-7cc"/>
-                            <constraint firstItem="kkW-GE-663" firstAttribute="leading" secondItem="QuM-ak-q4z" secondAttribute="leading" id="sZF-nR-yMr"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QuM-ak-q4z"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IIK-ya-GO3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2854" y="-140"/>
-        </scene>
     </scenes>
     <resources>
         <image name="marloth-portrait" width="1209" height="1512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="wOd-mt-cfN"/>
+    </inferredMetricsTieBreakers>
 </document>

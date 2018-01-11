@@ -12,6 +12,12 @@ import CoreLocation
 
 class TMTrailMapLocationViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelegate{
 
+    enum parentController : Int {
+        case kCreateTrail = 0
+        case kCreateTrailSection
+        case kMainMenu
+    }
+
     //MARK:- IBOutlets
     @IBOutlet weak var trailLocationMapView: MKMapView!
 
@@ -19,6 +25,8 @@ class TMTrailMapLocationViewController: UIViewController,MKMapViewDelegate,CLLoc
     let locationManager = CLLocationManager() // for getting GPS coords
     var currentLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
     let regionRadius: CLLocationDistance = 1000
+    var parentControllerForMapVC = parentController.kCreateTrail
+    var currentTrailSection = TMTrailSections.init(object: [])
 
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -32,6 +40,17 @@ class TMTrailMapLocationViewController: UIViewController,MKMapViewDelegate,CLLoc
 
         // Show users current location icon on map
         trailLocationMapView.showsUserLocation = true
+
+        switch parentControllerForMapVC {
+        case .kCreateTrail:
+            self.title = "Current Location"
+        case .kCreateTrailSection:
+            self.addCostomNavigationButtonsToView()
+            self.getCurrentRecordingTrailSection(trailSectionGUID: TMUtility.sharedInstance.recordingTrailSectionGUID)
+        case .kMainMenu :
+            self.addCostomNavigationButtonsToView()
+            self.getCurrentRecordingTrailSection(trailSectionGUID: TMUtility.sharedInstance.recordingTrailSectionGUID)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +85,41 @@ class TMTrailMapLocationViewController: UIViewController,MKMapViewDelegate,CLLoc
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius, regionRadius)
         trailLocationMapView.setRegion(coordinateRegion, animated: true)
+    }
+
+    func addCostomNavigationButtonsToView() {
+        let stopTrailRecordingButton = UIBarButtonItem.init(title: "Stop", style: .done, target: self, action: #selector(self.btnStopTrailRecordingTapped))
+        self.navigationItem.rightBarButtonItem = stopTrailRecordingButton
+
+        let customBackButton = UIBarButtonItem.init(title: "Back", style: .done, target: self, action: #selector(self.btnCustomBackTapped))
+        self.navigationItem.leftBarButtonItem = customBackButton
+    }
+
+    @objc func btnCustomBackTapped() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+
+    @objc func btnStopTrailRecordingTapped() {
+        // Stop recording here
+        AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailSectionRecordingStop, PositiveTitle: TMConstants.kAlertTypeYES, NegativeTitle: TMConstants.kAlertTypeNO, onPositive: {
+            TMUtility.sharedInstance.recordingTrailSectionGUID = ""
+            self.navigationController?.popToRootViewController(animated: true)
+        }) {
+            // No Action on "No" button press.
+        }
+    }
+
+    // Get current recording trail section from local DB
+    func getCurrentRecordingTrailSection(trailSectionGUID:String) {
+        let dataManagerWrapper = TMDataWrapperManager()
+
+        dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
+            if (responseArray?.count)! > 0 {
+                self.currentTrailSection = responseArray?.object(at: 0) as! TMTrailSections
+                self.title = self.currentTrailSection.name ?? ""
+            }
+        }
+        dataManagerWrapper.callToGetTrailSectionFromDB(trailSectionGUID: trailSectionGUID)
     }
 
 }

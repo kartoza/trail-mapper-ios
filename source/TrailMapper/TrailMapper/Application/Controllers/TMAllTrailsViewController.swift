@@ -69,7 +69,8 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Selection code if user selects any trails
-        self.performSegue(withIdentifier: TMConstants.kSegueTrailSection, sender: self)
+//        self.performSegue(withIdentifier: TMConstants.kSegueTrailSection, sender: self)
+        self.performSegue(withIdentifier: TMConstants.kSegueCreateTrailSection, sender: self)
     }
 
 
