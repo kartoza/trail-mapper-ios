@@ -283,6 +283,11 @@ CREATE VIEW vw_trails AS
 
 ALTER TABLE vw_trails OWNER TO timlinux;
 
+create view trails.vw_trail_sqlite_export as select 'insert into trail (name, notes, offset, colour, image, guid, geom) values ("' ||
+name || '","' || ''  || '","' || "offset"  || '","' || colour  || '","' || image  || '","' || guid  || '","' || st_astext(geom) || '");' from trails.trail;
+
+COMMENT ON VIEW trails.vw_trail_sqlite_export IS 'This view generates insert statements for the sqlite database used in mobile apps.';
+
 --
 -- TOC entry 3481 (class 2604 OID 165999)
 -- Name: category id; Type: DEFAULT; Schema: trails; Owner: timlinux
