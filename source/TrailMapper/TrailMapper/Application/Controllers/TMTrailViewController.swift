@@ -107,6 +107,7 @@ class TMTrailViewController: UIViewController, CLLocationManagerDelegate,UITextF
             // Hard coded value , need to discuss about this
             newTrailModel.id = 3
             newTrailModel.guid = "121233"
+            newTrailModel.geom = "POINT(\(self.currentLocationCoordinate.latitude ) \(self.currentLocationCoordinate.longitude ))"
             newTrailModel.offset = 3
 
             let dataManagerWrapper = TMDataWrapperManager()
