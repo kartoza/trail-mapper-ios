@@ -141,6 +141,7 @@ static SCIDatabaseDAO *userProfileDAO;
 }
 
 - (BOOL) executeUpdateQuery:(NSString*)query{
+    NSLog(@"Update Query %@", query);
 	return [objFMDatabase executeUpdate:query];
 }
 
