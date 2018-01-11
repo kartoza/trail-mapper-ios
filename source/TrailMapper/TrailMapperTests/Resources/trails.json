@@ -3,7 +3,6 @@
 		{
 			"name": "Die Plaat Hike",
 			"colour": "#ff018d",
-			"id": 62,
 			"geom": "POINT(0 0)",
 			"image": null,
 			"offset": 2,
@@ -13,7 +12,6 @@
 		{
 			"name": "Klipspringer trail",
 			"colour": "#ff018d",
-			"id": 63,
 			"geom": "POINT(1 1)",
 			"image": null,
 			"offset": 2,

@@ -240,6 +240,27 @@ SELECT
 
 ALTER TABLE vw_trail_sections OWNER TO timlinux;
 
+CREATE view trails.vw_trail_with_sections as
+SELECT trail.guid, (SELECT array( 
+SELECT 
+  trail_section.guid
+FROM 
+  trails.trail_section, 
+  trails.trail, 
+  trails.trail_sections
+WHERE 
+  trail_sections.trail_id = trail.id AND
+  trail_sections.trail_section_id = trail_section.id
+ORDER BY
+  trail_sections.order
+
+))as trail_section_list from trails.trail;
+
+COMMENT ON VIEW trails.vw_trail_with_sections IS 'This view lists each trail followed by a list of the associated trail_sections. Only guids are shown from the trail table.';
+
+
+ALTER TABLE vw_trail_with_sections OWNER TO timlinux;
+
 --
 -- TOC entry 224 (class 1259 OID 166085)
 -- Name: vw_trails; Type: VIEW; Schema: trails; Owner: timlinux
@@ -261,6 +282,36 @@ CREATE VIEW vw_trails AS
 
 
 ALTER TABLE vw_trails OWNER TO timlinux;
+
+create view trails.vw_trail_sqlite_export as select 'insert into trail (name, notes, offset, colour, image, guid, geom) values ("' ||
+name || '","' || ''  || '","' || "offset"  || '","' || colour  || '","' || image  || '","' || guid  || '","' || st_astext(geom) || '");' from trails.trail;
+
+COMMENT ON VIEW trails.vw_trail_sqlite_export IS 'This view generates insert statements for the sqlite database used in mobile apps.';
+
+update trails.trail_section set image='images/Marloth-with-WHS-logo-1.jpg';
+create view trails.vw_trail_sections_sqlite_export as select 'insert into trail_section (name, notes, image, grade_guid, guid, geom) values ("' ||
+name || '","' || ''  || '","' || image  || '","34ebcde5-91c4-4b6b-b98e-da7e7942e46c","' || guid  || '","' || st_astext(geom) || '");' from trails.trail_section;
+COMMENT ON VIEW trails.vw_trail_sections_sqlite_export IS 'This view generates insert statements for the sqlite database used in mobile apps from the trail_section table.';
+
+
+create view trails.vw_trail_sections_m2m_sqlite_export as select 'insert into trail_sections (trail_guid, trail_section_guid, order) values ("' ||
+trail_guid  || '","' || trail_section_guid  || '", 0);' from (
+SELECT 
+  trail.guid as trail_guid, 
+  0, 
+  trail_section.guid as trail_section_guid
+FROM 
+  trails.trail_sections, 
+  trails.trail_section, 
+  trails.trail
+WHERE 
+  trail_sections.trail_id = trail.id AND
+  trail_sections.trail_section_id = trail_section.id
+) as trail_sections_guids;
+
+;
+COMMENT ON VIEW trails.vw_trail_sections_m2m_sqlite_export IS 'This view generates insert statements for the sqlite database used in mobile apps from the trail_sections table.';
+
 
 --
 -- TOC entry 3481 (class 2604 OID 165999)
@@ -597,3 +648,6 @@ ALTER TABLE ONLY trail_sections
 -- PostgreSQL database dump complete
 --
 
+
+-- make sure we have a default image so that our sqlite exports can work
+update trails.trail set image='images/Marloth-with-WHS-logo-1.jpg';
