@@ -21,6 +21,8 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.title = "Trails"
+
         self.tblAllTrails.tableFooterView = UIView()
 
         //Make call to get all trail list from server
@@ -67,6 +69,7 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Selection code if user selects any trails
+        self.performSegue(withIdentifier: TMConstants.kSegueTrailSection, sender: self)
     }
 
 
@@ -81,6 +84,7 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
 
             if ((trailsModel.trails?.count) ?? 0) > 0 {
                 self.trailsArray = trailsModel.trails ?? []
+                self.syncTrailsDataWithLocalDB(trailsArray: self.trailsArray)
                 self.tblAllTrails.reloadData()
             }else {
                 AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: "Any failure message", PositiveTitle: TMConstants.kAlertTypeOK)
@@ -88,6 +92,13 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
 
         }) { (error) in
             AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: error.debugDescription, PositiveTitle: TMConstants.kAlertTypeOK)
+        }
+    }
+
+    //To Sync trails data with local SQLite database
+    func syncTrailsDataWithLocalDB(trailsArray:[TMTrails]) {
+        for trail in trailsArray {
+            TMDataWrapperManager.sharedInstance.saveTrailToLocalDatabase(trailModel: trail)
         }
     }
 
