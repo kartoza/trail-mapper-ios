@@ -240,6 +240,27 @@ SELECT
 
 ALTER TABLE vw_trail_sections OWNER TO timlinux;
 
+CREATE view trails.vw_trail_with_sections as
+SELECT trail.guid, (SELECT array( 
+SELECT 
+  trail_section.guid
+FROM 
+  trails.trail_section, 
+  trails.trail, 
+  trails.trail_sections
+WHERE 
+  trail_sections.trail_id = trail.id AND
+  trail_sections.trail_section_id = trail_section.id
+ORDER BY
+  trail_sections.order
+
+))as trail_section_list from trails.trail;
+
+COMMENT ON VIEW trails.vw_trail_with_sections IS 'This view lists each trail followed by a list of the associated trail_sections. Only guids are shown.';
+
+
+ALTER TABLE vw_trail_with_sections OWNER TO timlinux;
+
 --
 -- TOC entry 224 (class 1259 OID 166085)
 -- Name: vw_trails; Type: VIEW; Schema: trails; Owner: timlinux
