@@ -18,6 +18,8 @@ public final class TMTrailSections: NSCoding {
     static let grade = "grade"
     static let guid = "guid"
     static let notes = "notes"
+    static let imagePath = "image_path"
+    static let offset = "offset"
   }
 
   // MARK: Properties
@@ -27,6 +29,8 @@ public final class TMTrailSections: NSCoding {
   public var grade: Int?
   public var guid: String?
   public var notes: String?
+  public var imagePath: String?
+    public var offset: Int?
 
   // MARK: SwiftyJSON Initializers
   /// Initiates the instance based on the object.
@@ -47,6 +51,8 @@ public final class TMTrailSections: NSCoding {
     grade = json[SerializationKeys.grade].int
     guid = json[SerializationKeys.guid].string
     notes = json[SerializationKeys.notes].string
+    imagePath = json[SerializationKeys.imagePath].string
+    offset = json[SerializationKeys.offset].int
   }
 
   /// Generates description of the object in the form of a NSDictionary.
@@ -60,6 +66,9 @@ public final class TMTrailSections: NSCoding {
     if let value = grade { dictionary[SerializationKeys.grade] = value }
     if let value = guid { dictionary[SerializationKeys.guid] = value }
     if let value = notes { dictionary[SerializationKeys.notes] = value }
+    if let value = imagePath { dictionary[SerializationKeys.imagePath] = value }
+    if let value = offset { dictionary[SerializationKeys.offset] = value }
+
     return dictionary
   }
 
@@ -71,6 +80,8 @@ public final class TMTrailSections: NSCoding {
     self.grade = aDecoder.decodeObject(forKey: SerializationKeys.grade) as? Int
     self.guid = aDecoder.decodeObject(forKey: SerializationKeys.guid) as? String
     self.notes = aDecoder.decodeObject(forKey: SerializationKeys.notes) as? String
+    self.imagePath = aDecoder.decodeObject(forKey: SerializationKeys.imagePath) as? String
+    self.offset = aDecoder.decodeObject(forKey: SerializationKeys.offset) as? Int
   }
 
   public func encode(with aCoder: NSCoder) {
@@ -80,6 +91,8 @@ public final class TMTrailSections: NSCoding {
     aCoder.encode(grade, forKey: SerializationKeys.grade)
     aCoder.encode(guid, forKey: SerializationKeys.guid)
     aCoder.encode(notes, forKey: SerializationKeys.notes)
+    aCoder.encode(imagePath, forKey: SerializationKeys.imagePath)
+    aCoder.encode(offset, forKey: SerializationKeys.offset)
   }
 
 }

@@ -25,15 +25,15 @@ class TMDataWrapperManager: NSObject {
      * trailId : Pass the trail identifer ID
      // Response :  Get response (trails array/dictionary) through block handler function.
      **/
-    func callToGetTrailsFromDB(trailId:String)
+    func callToGetTrailsFromDB(trailGUID:String)
     {
         var trailsArray = NSMutableArray.init()
         let trailsModelArray = NSMutableArray.init()
         
-        if trailId == "" {
+        if trailGUID == "" {
             trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE)", type: "SELECT")
         }else {
-            trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE) WHERE id='\(trailId)'", type: "SELECT")
+            trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE) WHERE guid='\(trailGUID)'", type: "SELECT")
         }
 
         for trails in trailsArray {
@@ -48,7 +48,7 @@ class TMDataWrapperManager: NSObject {
     }
 
     /**
-     // Function Purpose : To save the trails onlocal storage
+     // Function Purpose : To save the trails on local storage
      //Params
      * trailModel : Pass the trail model
      // Response :
@@ -59,9 +59,9 @@ class TMDataWrapperManager: NSObject {
         let trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE) WHERE guid='\(String(describing: trailModel.guid ?? ""))'", type: "SELECT")
 
         if (trailsArray?.count ?? 0) > 0 {
-            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_TABLE) set id = '\(trailModel.id!)',name = '\(trailModel.name ?? "")',notes = 'No Notes',image_path = '\(trailModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geometry = '\(trailModel.geom ?? "")' where guid = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
+            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_TABLE) set name = '\(trailModel.name ?? "")',notes = 'No Notes',image_path = '\(trailModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geometry = '\(trailModel.geom ?? "")' where guid = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
         }else {
-            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_TABLE)(id, name,notes,image_path,guid,colour,offset,geometry) VALUES ('\(trailModel.id!)','\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
+            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_TABLE)(name,notes,image_path,guid,colour,offset,geometry) VALUES ('\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
 
             if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
             {
@@ -74,29 +74,62 @@ class TMDataWrapperManager: NSObject {
             }
         }
     }
-    
+
+    /**
+     // Function Purpose : To get the trail sections from local storage
+     //Params
+     * trailSectionGUID : Pass the trail GUID
+     // Response :  Get response (trail section array/dictionary) through block handler function.
+     **/
+    func callToGetTrailSectionFromDB(trailSectionGUID:String)
+    {
+        var trailSectionArray = NSMutableArray.init()
+        let trailSectionModelArray = NSMutableArray.init()
+
+        if trailSectionGUID == "" {
+            trailSectionArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_SECTION_TABLE)", type: "SELECT")
+        }else {
+            trailSectionArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_SECTION_TABLE) WHERE guid='\(trailSectionGUID)'", type: "SELECT")
+        }
+
+        for trailSection in trailSectionArray {
+            let trailSectionModel = TMTrailSections.init(object: trailSection)
+            trailSectionModelArray.addObjects(from: [trailSectionModel])
+        }
+
+        if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
+        {
+            webServiceWrapperBlockHandler(trailSectionModelArray, nil,nil)
+        }
+    }
+
+    /**
+     // Function Purpose : To save the trail Section on local storage
+     //Params
+     * trailSectionModel : Pass the trail section model
+     // Response :
+     **/
     func saveTrailSectionsToLocalDatabase(trailSectionModel:TMTrailSections)
     {
-
         //This will be dependant on JSON response of TrailSection API
 
-        //        let trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_SECTION_TABLE) WHERE guid='\(String(describing: trailSectionModel.guid ?? ""))'", type: "SELECT")
-        //
-        //        if (trailsArray?.count ?? 0) > 0 {
-        //            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_SECTION_TABLE) set id = '\(trailSectionModel.id!)',name = '\(trailSectionModel.name ?? "")',notes = 'No Notes',image_path = '\(trailSectionModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geometry = '\(trailModel.geom ?? "")' where id = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
-        //        }else {
-        //            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_SECTION_TABLE)(id, name,notes,image_path,guid,colour,offset,geometry) VALUES ('\(trailModel.id!)','\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
-        //
-        //            if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
-        //            {
-        //                if dbOperationStatus {
-        //                    webServiceWrapperBlockHandler([], nil,nil)
-        //                }else {
-        //                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Operation failed"])
-        //                    webServiceWrapperBlockHandler([], nil,error)
-        //                }
-        //            }
-        //        }
+        let trailsSectionArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_SECTION_TABLE) WHERE guid='\(String(describing: trailSectionModel.guid ?? ""))'", type: "SELECT")
+
+        if (trailsSectionArray?.count ?? 0) > 0 {
+            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_SECTION_TABLE) set name = '\(trailSectionModel.name ?? "")',notes = 'No Notes',image_path = '\(trailSectionModel.imagePath ?? "")',offset = '\(trailSectionModel.offset ?? 0)',geometry = '\(trailSectionModel.geom ?? "")' where guid = '\(trailSectionModel.guid!)'") //(trailModel.notes!) Do later
+        }else {
+            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_SECTION_TABLE)(name,notes,image_path,guid,offset,geometry,grade_guid) VALUES ('\(trailSectionModel.name ?? "")','No Notes','\(trailSectionModel.imagePath ?? "NA")','\(trailSectionModel.guid ?? "")','\(trailSectionModel.offset ?? 0)','\(trailSectionModel.geom ?? "")','\("Grade_GUID")')") // ,'\(trailModel.notes ?? "NA")' Do later
+
+            if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
+            {
+                if dbOperationStatus {
+                    webServiceWrapperBlockHandler([], nil,nil)
+                }else {
+                    let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Operation failed"])
+                    webServiceWrapperBlockHandler([], nil,error)
+                }
+            }
+        }
     }
     
 }

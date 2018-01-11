@@ -10,6 +10,14 @@ import UIKit
 
 class TMLandingPageViewController: UIViewController {
 
+    //MARK:- IBOutlets
+
+    @IBOutlet weak var btnStartTrailSection: UIButton!
+
+    //MARK:- Variables & Constants
+
+
+    //MARK:- View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,9 +27,14 @@ class TMLandingPageViewController: UIViewController {
         // for the landing page only we will hide the navigation controller
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
 
+        if TMUtility.sharedInstance.recordingTrailSectionGUID != "" {
+            self.btnStartTrailSection.setTitle("Recording is going on", for: .normal)
+        }else {
+            self.btnStartTrailSection.setTitle("Start recording a trail section", for: .normal)
+        }
+
         self.getAllTrails()
     }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -32,11 +45,29 @@ class TMLandingPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+     // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == TMConstants.kSegueMenuToTrailSectionMap {
+            let locationMapController = segue.destination as! TMTrailMapLocationViewController
+            locationMapController.parentControllerForMapVC = .kMainMenu
+        }
+    }
+
     @IBAction func btnCreateTrailClicked(_ sender:Any) {
        // TMAPIManager.sharedInstance.getTrails()
         TMAPIManager.sharedInstance.getTrail(trailId: 1)
     }
 
+    @IBAction func btnStartRecordingTrailSectionClicked(_ sender:Any) {
+        // TMAPIManager.sharedInstance.getTrails()
+        if (TMUtility.sharedInstance.recordingTrailSectionGUID != "" )  {
+            self.performSegue(withIdentifier: TMConstants.kSegueMenuToTrailSectionMap, sender: self)
+        }else {
+            self.performSegue(withIdentifier: TMConstants.kSegueGoToAllTrails, sender: self)
+        }
+    }
 
     // Get All trails list for checking purpose
     func getAllTrails() {
@@ -54,7 +85,7 @@ class TMLandingPageViewController: UIViewController {
                 }
             }
         }
-        dataManagerWrapper.callToGetTrailsFromDB(trailId: "")
+        dataManagerWrapper.callToGetTrailsFromDB(trailGUID: "")
     }
 
 }
