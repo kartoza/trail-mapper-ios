@@ -37,9 +37,16 @@
 		802AD61D20035D0200A94059 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 802AD61B20035D0200A94059 /* LaunchScreen.storyboard */; };
 		802AD62820035D0200A94059 /* TrailMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD62720035D0200A94059 /* TrailMapperTests.swift */; };
 		802AD63320035D0200A94059 /* TrailMapperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802AD63220035D0200A94059 /* TrailMapperUITests.swift */; };
+		805D7D2220060CBF00D39D50 /* trail_section72.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D1D20060CBE00D39D50 /* trail_section72.json */; };
+		805D7D2320060CBF00D39D50 /* trail62.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D1E20060CBE00D39D50 /* trail62.json */; };
+		805D7D2420060CBF00D39D50 /* trail62_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D1F20060CBF00D39D50 /* trail62_sections.json */; };
+		805D7D2520060CBF00D39D50 /* trail_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D2020060CBF00D39D50 /* trail_sections.json */; };
+		805D7D2620060CBF00D39D50 /* trails.json in Resources */ = {isa = PBXBuildFile; fileRef = 805D7D2120060CBF00D39D50 /* trails.json */; };
 		80680BF220039F0800BED446 /* TMTrailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80680BF120039F0800BED446 /* TMTrailViewController.swift */; };
 		80680BF42003A04C00BED446 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80680BF32003A04C00BED446 /* CoreLocation.framework */; };
 		80E4890E20038B99008266CC /* TMAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E4890D20038B99008266CC /* TMAPIManager.swift */; };
+		80E9C40B2006524900DE63A3 /* categories.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E9C40A2006524900DE63A3 /* categories.json */; };
+		80E9C40D2006532200DE63A3 /* grades.json in Resources */ = {isa = PBXBuildFile; fileRef = 80E9C40C2006532200DE63A3 /* grades.json */; };
 		B9DC6A2B9A99E0BB9965D10B /* Pods_TrailMapperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E7E8AADD5F4BB6D27666CC3 /* Pods_TrailMapperTests.framework */; };
 		FC3DB36293078F109CA233A8 /* Pods_TrailMapperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */; };
 /* End PBXBuildFile section */
@@ -106,9 +113,16 @@
 		802AD62E20035D0200A94059 /* TrailMapperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrailMapperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		802AD63220035D0200A94059 /* TrailMapperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailMapperUITests.swift; sourceTree = "<group>"; };
 		802AD63420035D0200A94059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805D7D1D20060CBE00D39D50 /* trail_section72.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail_section72.json; sourceTree = "<group>"; };
+		805D7D1E20060CBE00D39D50 /* trail62.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail62.json; sourceTree = "<group>"; };
+		805D7D1F20060CBF00D39D50 /* trail62_sections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail62_sections.json; sourceTree = "<group>"; };
+		805D7D2020060CBF00D39D50 /* trail_sections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trail_sections.json; sourceTree = "<group>"; };
+		805D7D2120060CBF00D39D50 /* trails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = trails.json; sourceTree = "<group>"; };
 		80680BF120039F0800BED446 /* TMTrailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMTrailViewController.swift; sourceTree = "<group>"; };
 		80680BF32003A04C00BED446 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		80E4890D20038B99008266CC /* TMAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMAPIManager.swift; sourceTree = "<group>"; };
+		80E9C40A2006524900DE63A3 /* categories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = categories.json; sourceTree = "<group>"; };
+		80E9C40C2006532200DE63A3 /* grades.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grades.json; sourceTree = "<group>"; };
 		95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapper.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapper/Pods-TrailMapper.release.xcconfig"; sourceTree = "<group>"; };
 		B43542FA206B2A1BA16DEAC0 /* Pods_TrailMapperUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrailMapperUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD35A7C232E8EB29823E7D8 /* Pods-TrailMapperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrailMapperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TrailMapperUITests/Pods-TrailMapperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -393,6 +407,13 @@
 		80680BF72004E60B00BED446 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80E9C40C2006532200DE63A3 /* grades.json */,
+				80E9C40A2006524900DE63A3 /* categories.json */,
+				805D7D1D20060CBE00D39D50 /* trail_section72.json */,
+				805D7D2020060CBF00D39D50 /* trail_sections.json */,
+				805D7D1F20060CBF00D39D50 /* trail62_sections.json */,
+				805D7D1E20060CBE00D39D50 /* trail62.json */,
+				805D7D2120060CBF00D39D50 /* trails.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -474,7 +495,7 @@
 				TargetAttributes = {
 					802AD60E20035D0200A94059 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+            ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -533,6 +554,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80E9C40D2006532200DE63A3 /* grades.json in Resources */,
+				805D7D2320060CBF00D39D50 /* trail62.json in Resources */,
+				805D7D2220060CBF00D39D50 /* trail_section72.json in Resources */,
+				805D7D2520060CBF00D39D50 /* trail_sections.json in Resources */,
+				805D7D2420060CBF00D39D50 /* trail62_sections.json in Resources */,
+				805D7D2620060CBF00D39D50 /* trails.json in Resources */,
+				80E9C40B2006524900DE63A3 /* categories.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -896,12 +924,14 @@
 			baseConfigurationReference = D5E6CAE640ECDC6F0D638DA8 /* Pods-TrailMapper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LDS87PU2DA;
 				INFOPLIST_FILE = TrailMapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kartoza.TrailMapper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kartoza.trailmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6fb3be04-3d64-42af-b912-1533faa51c18";
+				PROVISIONING_PROFILE_SPECIFIER = "Trail Mapper Development Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = TrailMapper_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -913,12 +943,14 @@
 			baseConfigurationReference = 95BC2D63418C8F9A8702C396 /* Pods-TrailMapper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = LDS87PU2DA;
 				INFOPLIST_FILE = TrailMapper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kartoza.TrailMapper;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kartoza.trailmapper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6fb3be04-3d64-42af-b912-1533faa51c18";
+				PROVISIONING_PROFILE_SPECIFIER = "Trail Mapper Development Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = TrailMapper_Bridging_Header.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
