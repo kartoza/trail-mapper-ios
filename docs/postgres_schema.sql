@@ -288,6 +288,10 @@ name || '","' || ''  || '","' || "offset"  || '","' || colour  || '","' || image
 
 COMMENT ON VIEW trails.vw_trail_sqlite_export IS 'This view generates insert statements for the sqlite database used in mobile apps.';
 
+update trails.trail_section set image='images/Marloth-with-WHS-logo-1.jpg';
+create view trails.vw_trail_sections_sqlite_export as select 'insert into trail_section (name, notes, image, grade_guid, guid, geom) values ("' ||
+name || '","' || ''  || '","' || image  || '","34ebcde5-91c4-4b6b-b98e-da7e7942e46c","' || guid  || '","' || st_astext(geom) || '");' from trails.trail_section;
+COMMENT ON VIEW trails.vw_trail_sections_sqlite_export IS 'This view generates insert statements for the sqlite database used in mobile apps.';
 --
 -- TOC entry 3481 (class 2604 OID 165999)
 -- Name: category id; Type: DEFAULT; Schema: trails; Owner: timlinux
