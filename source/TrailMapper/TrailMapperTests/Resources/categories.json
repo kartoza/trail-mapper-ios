@@ -1,0 +1,53 @@
+{
+	"grades": [{
+			"guid": "731426af-1b2d-4e91-8c23-976712cdd4fc",
+			"name": "trail signage",
+			"image": null
+		},
+		{
+			"guid": "d38d4c35-dc2f-44de-a9ae-abe8b239095f",
+			"name": "invasive vegetation",
+			"image": null
+		},
+		{
+			"guid": "1bec08ae-00b3-4f13-a1f8-506440a7915f",
+			"name": "trail condition",
+			"image": null
+		},
+		{
+			"guid": "90dca3eb-7988-4b67-b12e-d5c62ad88251",
+			"name": "scenic view",
+			"image": null
+		},
+		{
+			"guid": "e0e50574-3506-4a0a-9635-c01d9d0b7114",
+			"name": "flora",
+			"image": null
+		},
+		{
+			"guid": "f23edf34-0530-4973-b094-a42f4e596a2b",
+			"name": "fauna",
+			"image": null
+		},
+		{
+			"guid": "e3e1eeca-1743-4375-8a41-f5f0ba9940a1",
+			"name": "geology",
+			"image": null
+		},
+		{
+			"guid": "4f247594-b159-4704-aa42-5ec6081bf0cd",
+			"name": "pollution",
+			"image": null
+		},
+		{
+			"guid": "96dea52d-e962-4106-8e64-ad9023264f87",
+			"name": "vandalism",
+			"image": null
+		},
+		{
+			"guid": "d68582fb-09c1-422d-8140-d22739ada83f",
+			"name": "other",
+			"image": null
+		}
+	]
+}
