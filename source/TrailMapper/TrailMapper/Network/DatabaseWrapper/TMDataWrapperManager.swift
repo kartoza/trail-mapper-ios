@@ -60,9 +60,9 @@ class TMDataWrapperManager: NSObject {
         let trailsArray = SCIDatabaseDAO.shared().executeQuery("Select * from \(TMConstants.kTRAIL_TABLE) WHERE guid='\(String(describing: trailModel.guid ?? ""))'", type: "SELECT")
 
         if (trailsArray?.count ?? 0) > 0 {
-            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_TABLE) set name = '\(trailModel.name ?? "")',notes = 'No Notes',image_path = '\(trailModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geometry = '\(trailModel.geom ?? "")' where guid = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
+            SCIDatabaseDAO.shared().executeUpdateQuery("UPDATE \(TMConstants.kTRAIL_TABLE) set name = '\(trailModel.name ?? "")',notes = 'No Notes',image = '\(trailModel.image ?? "")',colour = '\(trailModel.colour ?? "")',offset = '\(trailModel.offset ?? 0)',geom = '\(trailModel.geom ?? "")' where guid = '\(trailModel.guid!)'") //(trailModel.notes!) Do later
         }else {
-            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_TABLE)(name,notes,image_path,guid,colour,offset,geometry) VALUES ('\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
+            let dbOperationStatus = SCIDatabaseDAO.shared().executeInsertQuery("INSERT INTO \(TMConstants.kTRAIL_TABLE)(name,notes,image,guid,colour,offset,geom) VALUES ('\(trailModel.name ?? "")','No Notes','\(trailModel.image ?? "NA")','\(trailModel.guid ?? "")','\(trailModel.colour ?? "")','\(trailModel.offset ?? 0)','\(trailModel.geom ?? "")')") // ,'\(trailModel.notes ?? "NA")' Do later
 
             if let webServiceWrapperBlockHandler = self.SDDataWrapperBlockHandler
             {
