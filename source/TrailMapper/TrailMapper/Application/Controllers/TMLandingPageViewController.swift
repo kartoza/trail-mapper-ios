@@ -33,7 +33,8 @@ class TMLandingPageViewController: UIViewController {
             self.btnStartTrailSection.setTitle("Start recording a trail section", for: .normal)
         }
 
-        self.getAllTrails()
+        //self.getAllTrails()
+        self.callToGetTrailsWithSectionsFromServer()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,7 +46,7 @@ class TMLandingPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-     // MARK: - Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -56,7 +57,7 @@ class TMLandingPageViewController: UIViewController {
     }
 
     @IBAction func btnCreateTrailClicked(_ sender:Any) {
-       // TMAPIManager.sharedInstance.getTrails()
+        // TMAPIManager.sharedInstance.getTrails()
         TMAPIManager.sharedInstance.getTrail(trailId: 1)
     }
 
@@ -88,5 +89,31 @@ class TMLandingPageViewController: UIViewController {
         dataManagerWrapper.callToGetTrailsFromDB(trailGUID: "")
     }
 
-}
+    // Web service wrapper call to fetch trails with sections from server instance
+    func callToGetTrailsWithSectionsFromServer(){
 
+        let reqstParams:[String:Any] = ["":""]
+
+        TMWebServiceWrapper.getTrailWithSectionsFromServer(KMethodType:.kTypePOST, APIName: TMConstants.kWS_GET_TRAILS_WITH_SECTIONS, Parameters: reqstParams, onSuccess: { (response) in
+
+            let trailsWithSectionModel = response as! TMTrailWithSection
+
+            if ((trailsWithSectionModel.trailsWithSections?.count) ?? 0) > 0 {
+                self.syncTrailsWithSectionDataWithLocalDB(trailsWithSectionArray: trailsWithSectionModel.trailsWithSections ?? [])
+            }
+        }) { (error) in
+            //AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: error.debugDescription, PositiveTitle: TMConstants.kAlertTypeOK)
+        }
+    }
+
+    //To Sync trails data with local SQLite database
+    func syncTrailsWithSectionDataWithLocalDB(trailsWithSectionArray:[TMTrailsWithSections]) {
+        for trailWithSection in trailsWithSectionArray {
+            // Save to local database
+            for trailSectionGuid in trailWithSection.trailSectionGuids! {
+                TMDataWrapperManager.sharedInstance.saveTrailWithSectionToLocalDatabase(trailGUID: trailWithSection.trailGuid ?? "", trailSectionGUID: trailSectionGuid)
+            }
+        }
+    }
+
+}

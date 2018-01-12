@@ -26,7 +26,10 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
         self.tblAllTrails.tableFooterView = UIView()
 
         //Make call to get all trail list from server
-        self.callToGetAllTrailsFromServer()
+        //self.callToGetAllTrailsFromServer()
+
+        //Fetch all trails from local DB
+        self.getAllTrailsFromLocalDB()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +76,19 @@ class TMAllTrailsViewController: UIViewController,UITableViewDelegate,UITableVie
         self.performSegue(withIdentifier: TMConstants.kSegueCreateTrailSection, sender: self)
     }
 
+    // Get All trails list for checking purpose
+    func getAllTrailsFromLocalDB() {
+        let dataManagerWrapper = TMDataWrapperManager()
+
+        dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
+            if (responseArray?.count)! > 0 {
+                print("Trail Array --->", responseArray ?? "")
+                self.trailsArray = responseArray as! [TMTrails]
+                self.tblAllTrails.reloadData()
+            }
+        }
+        dataManagerWrapper.callToGetTrailsFromDB(trailGUID: "")
+    }
 
     // Web service wrapper call to fetch trails from server instance
     func callToGetAllTrailsFromServer(){

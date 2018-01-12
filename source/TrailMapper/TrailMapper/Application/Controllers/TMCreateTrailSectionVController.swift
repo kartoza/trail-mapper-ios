@@ -28,7 +28,7 @@ class TMCreateTrailSectionVController: UIViewController,UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         // Add save trail section button in navigation bar
-        let saveTrailSectionButton = UIBarButtonItem.init(title: "Save", style: .done, target: self, action: #selector(self.btnSaveTrailSectionTapped))
+        let saveTrailSectionButton = UIBarButtonItem.init(title: "Start", style: .done, target: self, action: #selector(self.btnSaveTrailSectionTapped))
         self.navigationItem.rightBarButtonItem = saveTrailSectionButton
 
         //Start updating user current location through TMLocationManager
@@ -88,7 +88,7 @@ class TMCreateTrailSectionVController: UIViewController,UITextFieldDelegate {
             newTrailSectionModel.imagePath = self.trailSectionImageLocalPath
             // Hard coded value , need to discuss about this
             newTrailSectionModel.id = 3
-            newTrailSectionModel.geom = "POINT(\(self.currentLocationCoordinate.latitude ) \(self.currentLocationCoordinate.longitude ))"
+            newTrailSectionModel.geom = "LINESTRING(\(self.currentLocationCoordinate.longitude ) \(self.currentLocationCoordinate.latitude ))"
             newTrailSectionModel.offset = 3
             newTrailSectionModel.dateTimeStart = "\(NSDate().timeIntervalSince1970 * 1000)"
 
@@ -98,17 +98,21 @@ class TMCreateTrailSectionVController: UIViewController,UITextFieldDelegate {
             let dataManagerWrapper = TMDataWrapperManager()
 
             dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
-                    if error == nil {
-                        AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailSectionSaveSuccess, PositiveTitle: TMConstants.kAlertTypeOK, NegativeTitle: "", onPositive: {
-                            // On successful save operation move back to main menu.
-                            TMUtility.sharedInstance.recordingTrailSectionGUID = self.newTrailSectionModel.guid ?? ""
-                            self.performSegue(withIdentifier: TMConstants.kSegueTrailSectionMap, sender: self)
-                        }, onNegative: {
-                            //Do nothing
-                        })
-                    }else {
-                        AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailSectionSaveFail, PositiveTitle: TMConstants.kAlertTypeOK)
-                    }
+                if error == nil {
+                    AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailSectionSaveSuccess, PositiveTitle: TMConstants.kAlertTypeOK, NegativeTitle: "", onPositive: {
+                        // Assign recording trail section GUID to utility variable
+                        TMUtility.sharedInstance.recordingTrailSectionGUID = self.newTrailSectionModel.guid ?? ""
+                        // Start function which stores location updates on local db after TMConstants.cTrailSectionLocUpdateTimer seconds
+                        TMUtility.sharedInstance.saveRecordingTrailSectionUpdatesToLocalDB()
+                        // On successful save operation move back to main menu.
+                        self.performSegue(withIdentifier: TMConstants.kSegueTrailSectionMap,
+                                          sender: self)
+                    }, onNegative: {
+                        //Do nothing
+                    })
+                }else {
+                    AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailSectionSaveFail, PositiveTitle: TMConstants.kAlertTypeOK)
+                }
             }
             dataManagerWrapper.saveTrailSectionsToLocalDatabase(trailSectionModel:newTrailSectionModel )
 

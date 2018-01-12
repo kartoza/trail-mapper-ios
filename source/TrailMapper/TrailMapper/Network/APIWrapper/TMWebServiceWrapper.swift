@@ -49,4 +49,28 @@ class TMWebServiceWrapper: NSObject {
         }
     }
 
+    // API call to save trail sections on server instance
+    static func saveTrailSectionOnServer(KMethodType method:kMethodType ,APIName strAPI: String,
+                                  Parameters parameters: [String: Any] , onSuccess success:@escaping OnSuccessCompletionHandler , onFailure failure: @escaping OnFailureCompletionHandler) {
+
+        TMAPIManager.callAPI(KMethodType: method, APIName: strAPI, Parameters: parameters, onSuccess: { responseData in
+            success(responseData)
+        }) { (error) in
+            failure(error)
+        }
+    }
+
+    // API call to fetch trails with sections for server instance
+    static func getTrailWithSectionsFromServer(KMethodType method:kMethodType ,APIName strAPI: String,
+                                           Parameters parameters: [String: Any] , onSuccess success:@escaping OnSuccessCompletionHandler , onFailure failure: @escaping OnFailureCompletionHandler) {
+
+        TMAPIManager.callAPI(KMethodType: method, APIName: strAPI, Parameters: parameters, onSuccess: { responseData in
+            print("Print Respnse data --------------->",responseData)
+            let trailWithSectionsModel = TMTrailWithSection.init(object: responseData)
+            success(trailWithSectionsModel)
+        }) { (error) in
+            failure(error)
+        }
+    }
+
 }

@@ -18,7 +18,9 @@ class TMUtility: NSObject {
     }
 
     var recordingTrailSectionGUID = ""
+    var recordingUpdateTimer = Timer()
 
+    // Image save function to store in documents directory
     func saveImage(imagetoConvert image: UIImage, name imageName :String) -> String
     {
         let imageData: Data? = UIImageJPEGRepresentation(image, 0.8)
@@ -30,6 +32,7 @@ class TMUtility: NSObject {
         return imagePath!
     }
 
+    // Local sync check function for trails data is sync with server or not
     func syncLocalTrailDetailsWithServer() {
         let dataManagerWrapper = TMDataWrapperManager()
 
@@ -47,21 +50,22 @@ class TMUtility: NSObject {
         dataManagerWrapper.callToGetTrailsFromDB(trailGUID: "")
     }
 
+    // Call to save trails  data to server
     func callToSaveTrailOnServer(trail:TMTrails){
 
         let reqstParams:[String:Any] = ["":""]
 
         TMWebServiceWrapper.getTrailsFromServer(KMethodType:.kTypePOST, APIName: TMConstants.kWS_GET_TRAILS, Parameters: reqstParams, onSuccess: { (response) in
 
-            // If we get GUID in response then update the local database record with Guid.
-            //TMDataWrapperManager.sharedInstance.saveTrailToLocalDatabase(trailModel: trail)
-
+            // If we get True in response then update the local trails database record with true status for synchronised field.
+            TMDataWrapperManager.sharedInstance.saveSyncStatusForTrails(trailGUID: trail.guid ?? "")
 
         }) { (error) in
 
         }
     }
 
+    // Local sync check function for trail section data is sync with server or not
     func syncLocalTrailSectionDetailsWithServer() {
         let dataManagerWrapper = TMDataWrapperManager()
 
@@ -79,22 +83,22 @@ class TMUtility: NSObject {
         dataManagerWrapper.callToGetTrailSectionFromDB(trailSectionGUID: "")
     }
 
+    // Call to save trail section data to server
     func callToSaveTrailSectionsOnServer(trailSection:TMTrailSections){
-
         let reqstParams:[String:Any] = ["":""]
 
         TMWebServiceWrapper.getTrailsFromServer(KMethodType:.kTypePOST, APIName: TMConstants.kWS_GET_TRAILS, Parameters: reqstParams, onSuccess: { (response) in
 
-            // If we get GUID in response then update the local database record with Guid.
-            //TMDataWrapperManager.sharedInstance.saveTrailToLocalDatabase(trailModel: trail)
-
+            // If we get True in response then update the local trail section database record with true status for synchronised field.
+            TMDataWrapperManager.sharedInstance.saveSyncStatusForTrailSection(trailSectionGUID: trailSection.guid ?? "")
 
         }) { (error) in
 
         }
     }
 
-    func checkForRecodringStatus() {
+    // Check for any trail section is in recording state or not.
+    func checkForRecordringStatus() {
         let dataManagerWrapper = TMDataWrapperManager()
 
         dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
@@ -104,7 +108,10 @@ class TMUtility: NSObject {
                     // Check here the trail section has end time or not
                     // if end time not there then it will consider as trail section recording is going on
                     if trailSection.dateTimeEnd == nil {
-                         TMUtility.sharedInstance.recordingTrailSectionGUID = trailSection.guid ?? ""
+                        TMUtility.sharedInstance.recordingTrailSectionGUID = trailSection.guid ?? ""
+                        TMLocationManager.sharedInstance.startTrailingSectionUpdates()
+                        //Start saving trail section recording locations to local db
+                        self.saveRecordingTrailSectionUpdatesToLocalDB()
                     }
                 }
             }
@@ -112,4 +119,55 @@ class TMUtility: NSObject {
         dataManagerWrapper.callToGetTrailSectionFromDB(trailSectionGUID: "")
     }
 
+    // Start saving recordin trail section points for particular time interval
+    func saveRecordingTrailSectionUpdatesToLocalDB() {
+        if TMUtility.sharedInstance.recordingTrailSectionGUID != "" {
+            if !recordingUpdateTimer.isValid {
+                recordingUpdateTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(TMConstants.cTrailSectionLocUpdateTimer), repeats: true, block: { (timer) in
+                    self.saveTrailLocationInBackgroundTask(timer: timer)
+                })
+            }
+        }
+    }
+
+    // Stop saving recordin trail section points to local DB
+    func stopTrailRecordingUpdatedToLocalDB(){
+        if recordingUpdateTimer.isValid {
+            recordingUpdateTimer.invalidate()
+        }
+    }
+
+    // Saving trail sections locations points in background process.
+    func saveTrailLocationInBackgroundTask(timer:Timer) {
+        DispatchQueue.global(qos: DispatchQoS.background.qosClass).async {
+
+            // Check whether current & previous points are same or not
+            if !TMLocationManager.sharedInstance.previousRecordedTrailSectionLocation.isEqual(TMLocationManager.sharedInstance.latestLocationCoordinate) {
+                // Save location to local DB
+                let locationStr = "\(TMLocationManager.sharedInstance.latestLocationCoordinate.longitude) \(TMLocationManager.sharedInstance.latestLocationCoordinate.latitude)"
+                //Call TMDataWrapperManager function to save current recording trail section location
+                TMDataWrapperManager.sharedInstance.saveLocationUpdateForTrailSection(locationString: locationStr, trailSectionGUID: TMUtility.sharedInstance.recordingTrailSectionGUID)
+            }
+
+            DispatchQueue.main.async {
+                print("update some UI if needed")
+            }
+        }
+    }
+
+    // Get the formatted linestring from trailsections geom
+    func getLineStringFromTrailSectionGeom(lineString:String)-> String{
+        var returnString = lineString
+
+        returnString = lineString.replace(target: "LINESTRING(", withString: "").replace(target: ")", withString: "")
+
+        return returnString
+    }
 }
+
+extension String {
+    func replace(target: String, withString: String) -> String {
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+    }
+}
+
