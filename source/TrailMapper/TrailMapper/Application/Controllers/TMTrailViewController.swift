@@ -22,7 +22,7 @@ class TMTrailViewController: UIViewController,UITextFieldDelegate {
     //MARK:- Variables & Constants
     var currentLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
     var trailImageLocalPath = "No Image available"
-     let newTrailModel = TMTrails.init(object: [])
+    let newTrailModel = TMTrails.init(object: [])
     
     //MARK:- View LifeCycle
     override func viewDidLoad() {
@@ -97,22 +97,21 @@ class TMTrailViewController: UIViewController,UITextFieldDelegate {
             let dataManagerWrapper = TMDataWrapperManager()
 
             dataManagerWrapper.SDDataWrapperBlockHandler = { (responseArray : NSMutableArray? , responseDict:NSDictionary? , error:NSError? ) -> Void in
-                    if error == nil {
-                        AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveSuccess, PositiveTitle: TMConstants.kAlertTypeOK, NegativeTitle: "", onPositive: {
-                            // On successful save operation move back to main menu.
-                            self.navigationController?.popViewController(animated: true)
-                        }, onNegative: {
-                            //Do nothing
-                        })
-                    }else {
-                        AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveFail, PositiveTitle: TMConstants.kAlertTypeOK)
-                    }
+                if error == nil {
+                    AlertManager.showCustomAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveSuccess, PositiveTitle: TMConstants.kAlertTypeOK, NegativeTitle: "", onPositive: {
+                        // On successful save operation move back to main menu.
+                        self.navigationController?.popViewController(animated: true)
+                    }, onNegative: {
+                        //Do nothing
+                    })
+                }else {
+                    AlertManager.showCustomInfoAlert(Title: TMConstants.kApplicationName, Message: TMConstants.kAlertTrailsSaveFail, PositiveTitle: TMConstants.kAlertTypeOK)
+                }
             }
             dataManagerWrapper.saveTrailToLocalDatabase(trailModel:newTrailModel )
 
         }
     }
-
 
     // MARK: - Custom Class Functions
 

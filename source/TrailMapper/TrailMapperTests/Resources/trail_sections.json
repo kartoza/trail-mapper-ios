@@ -1,11 +1,73 @@
 {
-    "trails_with_sections": {
-        "072d95e0-7254-472b-8142-35bd818a5e73": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"],
-        "abf786a1-7877-4de6-a0d2-44f717e7363b": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"],
-        "0736c979-1f26-4e25-90c8-6c03e1745739": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"],
-        "9b2242ee-5009-43b9-aa2a-9dbc0d50eee7": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"],
-        "84a6d7f7-e7ae-4a2a-903b-77cbd5939b9d": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"],
-        "0d362ad2-8588-47f4-bb0e-740322f46ba9": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"],
-        "1d57ddc9-68f2-49c3-ba25-9e68bc2efcda": ["690945fc-e8ab-480e-8591-5b01235821ef", "d83a80fd-5106-4802-a51b-10761a900e22", "2e562185-c7cc-4c1d-9e21-2d5b744f508d", "6c56cca6-d582-4968-90e8-386261c51f22", "77aee729-510d-47c8-8f8b-745ec2eb4883", "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0", "47e49b5e-9289-4886-aaf4-4e789f54a65a", "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04", "e9f395f4-4dbe-456a-afb8-b9a5a501df2f", "22a99fb4-d1d9-453f-9d09-125e29c987f1", "c04022ce-09c9-4c0f-8aea-c7b081e80196", "5173908f-29b6-4715-8437-2e83cfcec2e1", "c675f9b5-0f72-4ed8-a804-58b5b94b2457", "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d", "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4", "7bd23226-b277-454d-a284-676e7bdab4f7", "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74", "40739e8d-cac9-4243-880f-18aebaf698c5"]
-    }
+    "trails_with_sections":[
+                            {
+                            "trail_guid":"072d95e0-7254-472b-8142-35bd818a5e73",
+                            "trail_section_guid":[
+                                                  "690945fc-e8ab-480e-8591-5b01235821ef",
+                                                  "d83a80fd-5106-4802-a51b-10761a900e22",
+                                                  "2e562185-c7cc-4c1d-9e21-2d5b744f508d",
+                                                  "6c56cca6-d582-4968-90e8-386261c51f22",
+                                                  "77aee729-510d-47c8-8f8b-745ec2eb4883",
+                                                  "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0",
+                                                  "47e49b5e-9289-4886-aaf4-4e789f54a65a",
+                                                  "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04",
+                                                  "e9f395f4-4dbe-456a-afb8-b9a5a501df2f",
+                                                  "22a99fb4-d1d9-453f-9d09-125e29c987f1",
+                                                  "c04022ce-09c9-4c0f-8aea-c7b081e80196",
+                                                  "5173908f-29b6-4715-8437-2e83cfcec2e1",
+                                                  "c675f9b5-0f72-4ed8-a804-58b5b94b2457",
+                                                  "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d",
+                                                  "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4",
+                                                  "7bd23226-b277-454d-a284-676e7bdab4f7",
+                                                  "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74",
+                                                  "40739e8d-cac9-4243-880f-18aebaf698c5"
+                                                  ]
+                            },
+                            {
+                            "trail_guid":"072d95e0-7254-472b-8142-35bd818a5e73",
+                            "trail_section_guid":[
+                                                  "690945fc-e8ab-480e-8591-5b01235821ef",
+                                                  "d83a80fd-5106-4802-a51b-10761a900e22",
+                                                  "2e562185-c7cc-4c1d-9e21-2d5b744f508d",
+                                                  "6c56cca6-d582-4968-90e8-386261c51f22",
+                                                  "77aee729-510d-47c8-8f8b-745ec2eb4883",
+                                                  "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0",
+                                                  "47e49b5e-9289-4886-aaf4-4e789f54a65a",
+                                                  "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04",
+                                                  "e9f395f4-4dbe-456a-afb8-b9a5a501df2f",
+                                                  "22a99fb4-d1d9-453f-9d09-125e29c987f1",
+                                                  "c04022ce-09c9-4c0f-8aea-c7b081e80196",
+                                                  "5173908f-29b6-4715-8437-2e83cfcec2e1",
+                                                  "c675f9b5-0f72-4ed8-a804-58b5b94b2457",
+                                                  "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d",
+                                                  "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4",
+                                                  "7bd23226-b277-454d-a284-676e7bdab4f7",
+                                                  "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74",
+                                                  "40739e8d-cac9-4243-880f-18aebaf698c5"
+                                                  ]
+                            },
+                            {
+                            "trail_guid":"072d95e0-7254-472b-8142-35bd818a5e73",
+                            "trail_section_guid":[
+                                                  "690945fc-e8ab-480e-8591-5b01235821ef",
+                                                  "d83a80fd-5106-4802-a51b-10761a900e22",
+                                                  "2e562185-c7cc-4c1d-9e21-2d5b744f508d",
+                                                  "6c56cca6-d582-4968-90e8-386261c51f22",
+                                                  "77aee729-510d-47c8-8f8b-745ec2eb4883",
+                                                  "be9bc9e9-ae3a-4cab-b8c6-2297a9bedba0",
+                                                  "47e49b5e-9289-4886-aaf4-4e789f54a65a",
+                                                  "8ee2a3b3-aaeb-4cfd-930d-9cf97655ec04",
+                                                  "e9f395f4-4dbe-456a-afb8-b9a5a501df2f",
+                                                  "22a99fb4-d1d9-453f-9d09-125e29c987f1",
+                                                  "c04022ce-09c9-4c0f-8aea-c7b081e80196",
+                                                  "5173908f-29b6-4715-8437-2e83cfcec2e1",
+                                                  "c675f9b5-0f72-4ed8-a804-58b5b94b2457",
+                                                  "7fe1acf4-3a3d-424d-aabf-9a7deeb6146d",
+                                                  "1b2b2faf-52a8-4fbf-aa7f-88c4191b75f4",
+                                                  "7bd23226-b277-454d-a284-676e7bdab4f7",
+                                                  "26a4d03c-b0d5-46c0-abef-a2ffdf6fef74",
+                                                  "40739e8d-cac9-4243-880f-18aebaf698c5"
+                                                  ]
+                            }
+                            ]
 }

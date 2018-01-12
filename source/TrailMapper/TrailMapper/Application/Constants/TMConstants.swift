@@ -15,6 +15,8 @@ class TMConstants: NSObject {
 
     static let SCREEN_SIZE: CGRect                =       UIScreen.main.bounds
 
+    static let cTrailSectionLocUpdateTimer      =       60.0
+
     //AlertTitle Constants
     static let kAlertTypeOK                             =       "OK"
     static let kAlertTypeCancel                       =       "Cancel"
@@ -36,10 +38,14 @@ class TMConstants: NSObject {
     static let TM_DATABASE_NAME                     =       "TrailMapper.sqlite"
     static let kTRAIL_TABLE                               =        "trail"
     static let kTRAIL_SECTION_TABLE                 =        "trail_section"
+    static let kTRAIL_WITH_SECTIONS_TABLE                 =        "trail_sections"
 
-    static let kWS_BASE_URL                              =        ""
+    static let kWS_BASE_URL                              =        "https://trailmapper.kartoza.com/api/"
+
     static let kWS_GET_TRAILS                           =       kWS_BASE_URL + "https://gist.github.com/timlinux/272bab60ffd2357921a1d2a8f5395eb2/raw/dffe9fae58cf3af67b787510b72a77bde29e7c9a/trails.json"
     static let kWS_GET_TRAIL_SECTIONS            =       kWS_BASE_URL + "https://gist.github.com/timlinux/272bab60ffd2357921a1d2a8f5395eb2/raw/dffe9fae58cf3af67b787510b72a77bde29e7c9a/trail_sections.json"
+
+    static let kWS_GET_TRAILS_WITH_SECTIONS    =       kWS_BASE_URL + "trail_sections/"
 
     static let kSegueTrailSection                                   =        "trailSectionListSegue"
     static let kSegueCreateTrailSection                         =        "createTrailSectionSegue"

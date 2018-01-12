@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("could not start reachability notifier")
         }
 
+        // To check that is there any recording is going or not
+        TMUtility.sharedInstance.checkForRecordringStatus()
+
         return true
     }
 
@@ -43,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        self.startTrailSectionRecordingInBackgroundMode()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -64,10 +68,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch reachability.connection {
         case .wifi:
             print("Reachable via WiFi")
+            self.syncAllDataBaseWithServer()
         case .cellular:
             print("Reachable via Cellular")
+            self.syncAllDataBaseWithServer()
         case .none:
             print("Network not reachable")
+        }
+    }
+
+    func syncAllDataBaseWithServer() {
+        TMUtility.sharedInstance.syncLocalTrailDetailsWithServer()
+        TMUtility.sharedInstance.syncLocalTrailSectionDetailsWithServer()
+    }
+
+    func startTrailSectionRecordingInBackgroundMode() {
+        var bgTask = UIBackgroundTaskIdentifier()
+        bgTask = UIApplication.shared.beginBackgroundTask { () -> Void in
+            UIApplication.shared.endBackgroundTask(bgTask)
+        }
+
+        TMUtility.sharedInstance.saveRecordingTrailSectionUpdatesToLocalDB()
+
+        if (bgTask != UIBackgroundTaskInvalid)
+        {
+            UIApplication.shared.endBackgroundTask(bgTask);
+            bgTask = UIBackgroundTaskInvalid;
         }
     }
 

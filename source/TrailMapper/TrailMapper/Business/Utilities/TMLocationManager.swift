@@ -20,6 +20,7 @@ class TMLocationManager: NSObject,CLLocationManagerDelegate {
 
     var locationManager = CLLocationManager() // for getting GPS coords
     var latestLocationCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D()// for storing last coord
+    var previousRecordedTrailSectionLocation: CLLocationCoordinate2D = CLLocationCoordinate2D()
 
     override init() {
         super.init()
@@ -55,11 +56,13 @@ class TMLocationManager: NSObject,CLLocationManagerDelegate {
         self.locationManager.stopUpdatingLocation()
     }
 
+    // Start trailing section updates monitoring
     func startTrailingSectionUpdates() {
         self.locationManager.startMonitoringSignificantLocationChanges()
         self.locationManager.startUpdatingLocation()
     }
 
+    // Stop trailing section updates monitoring
     func stopTrailingSectionUpdates() {
         self.locationManager.stopMonitoringSignificantLocationChanges()
         self.locationManager.stopUpdatingLocation()
@@ -75,4 +78,11 @@ class TMLocationManager: NSObject,CLLocationManagerDelegate {
         print("Coordinates: \(self.latestLocationCoordinate.latitude) ,  \(self.latestLocationCoordinate.longitude)")
     }
 
+}
+
+// Extension for checking co-ordinates
+extension CLLocationCoordinate2D {
+    func isEqual(_ coord: CLLocationCoordinate2D) -> Bool {
+        return (fabs(self.latitude - coord.latitude) < .ulpOfOne) && (fabs(self.longitude - coord.longitude) < .ulpOfOne)
+    }
 }
